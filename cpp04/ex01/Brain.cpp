@@ -33,17 +33,18 @@ Brain &Brain::operator=(const Brain &rhs)
 
 void	Brain::setIdea(size_t index, const std::string &str)
 {
-	if (index < 100)
+	if (index < 100) {
 		this->ideas[index] = str;
-	else
+	} else {
 		std::cerr << "index should be between 0 to 99" <<  std::endl;
+	}
 }
 
 const std::string *Brain::getIdea(size_t index)
 {
-	if (index < 100)
+	if (index < 100) {
 		return &this->ideas[index];
-	else {
+	} else {
 		std::cerr << "index should be between 0 to 99" << std::endl;
 		return NULL;
 	}

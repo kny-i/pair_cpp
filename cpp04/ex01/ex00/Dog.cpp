@@ -18,8 +18,8 @@ Dog::Dog(const Animal &rhs)
 
 Dog::~Dog()
 {
-	delete this->brain;
 	std::cerr << "(Dog destructor called)" << std::endl;
+	delete this->brain;
 }
 
 Dog &Dog::operator=(const Dog &rhs) {

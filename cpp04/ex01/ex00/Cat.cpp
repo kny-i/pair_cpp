@@ -43,4 +43,3 @@ const std::string *Cat::getIdea(size_t index)
 {
 	return (this->brain->getIdea(index));
 }
-
