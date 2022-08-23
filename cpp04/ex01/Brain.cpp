@@ -38,19 +38,6 @@ void	Brain::setIdea(size_t index, const std::string &str)
 	else
 		std::cerr << "index should be between 0 to 99" <<  std::endl;
 }
-/*
-
-const std::string &Brain::getIdea(size_t index)
-{
-	if (index < 100)
-		return this->ideas[index];
-	else {
-		std::cerr << RED << "index should be between 0 to 99" << STOP << std::endl;
-		const std::string s("Error");
-		return s;
-	}
-}
-*/
 
 const std::string *Brain::getIdea(size_t index)
 {

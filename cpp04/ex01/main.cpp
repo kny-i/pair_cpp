@@ -5,15 +5,12 @@
 
 int main()
 {
-//	Brain brain;
-//	brain.setIdea(0, "hello");
-//	const std::string *idea = brain.getIdea(0);
-//	std::cout << *idea << std::endl;
+	Dog *dog = new Dog();
+	Cat *cat = new Cat();
 
-	const Animal* dog = new Dog();
-	const Animal* cat = new Cat();
-
-
+	dog->setIdea(0, "hoge");
+	const std::string *s = dog->getIdea(0);
+	std::cout << *s << std::endl;
 
 	delete dog;
 	delete cat;
