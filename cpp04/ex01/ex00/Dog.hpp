@@ -18,7 +18,7 @@ public:
 	void setIdea(size_t index, const std::string &idea);
 	const std::string *getIdea(size_t index);
 private:
-	Brain *brain;
+	Brain *brain_;
 };
 
 #endif //CPP_DOG_HPP

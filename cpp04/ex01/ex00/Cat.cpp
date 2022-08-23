@@ -7,27 +7,27 @@
 Cat::Cat() : Animal("Cat")
 {
 	std::cerr << "(Cat default constructor called)" << std::endl;
-	this->brain = new Brain();
+	this->brain_ = new Brain();
 }
 
 Cat::Cat(const Animal &rhs)
 {
 	std::cerr << "(Cat copy constructor called)" << std::endl;
-	this->brain = new Brain();
+	this->brain_ = new Brain();
 	*this = rhs;
 }
 
 Cat::~Cat()
 {
 	std::cerr << "(Cat destructor called)" << std::endl;
-	delete this->brain;
+	delete this->brain_;
 }
 
 Cat &Cat::operator=(const Cat &rhs) {
 	std::cerr << "(Assignation operator called)" << std::endl;
 	if (this != &rhs) {
 		Animal::type = rhs.Animal::type;
-		*this->brain = *rhs.brain;
+		*this->brain_ = *rhs.brain_;
 	}
 	return *this;
 }
@@ -39,10 +39,10 @@ void Cat::makeSound() const
 
 void Cat::setIdea(size_t index, const std::string &idea)
 {
-	this->brain->setIdea(index, idea);
+	this->brain_->setIdea(index, idea);
 }
 
 const std::string *Cat::getIdea(size_t index)
 {
-	return (this->brain->getIdea(index));
+	return (this->brain_->getIdea(index));
 }
