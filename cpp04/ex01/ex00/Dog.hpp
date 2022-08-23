@@ -15,6 +15,8 @@ public:
 	Dog &operator=(const Dog &rhs);
 
 	void makeSound() const;
+//	void setIdea(size_t index, const std::string &idea);
+//	const std::string *getIdea(size_t index);
 private:
 	Brain *brain;
 };

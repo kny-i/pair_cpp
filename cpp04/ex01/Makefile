@@ -10,7 +10,8 @@ $(NAME): $(objs)
 	c++ $(CXXFLAGS) $(objs) -o $(NAME)
 
 clean:
-	$(RM) $(objs)
+	$(RM) ./$(objs)
+	$(RM) ./ex00/$(objs)
 
 fclean: clean
 	$(RM) $(NAME)
