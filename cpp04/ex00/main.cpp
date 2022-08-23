@@ -42,11 +42,6 @@ int main()
 		i->makeSound();
 		delete i;
 	}
-
-
-
-
-
 }
 
 
