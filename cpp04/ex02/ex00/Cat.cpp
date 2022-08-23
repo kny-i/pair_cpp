@@ -7,13 +7,12 @@
 Cat::Cat() : Animal("Cat")
 {
 	std::cerr << "(Cat default constructor called)" << std::endl;
-	this->brain = new Brain();
+	this->brain = new Brain;
 }
 
 Cat::Cat(const Animal &rhs)
 {
 	std::cerr << "(Cat copy constructor called)" << std::endl;
-	this->brain = new Brain();
 	*this = rhs;
 }
 
@@ -24,10 +23,8 @@ Cat::~Cat()
 }
 
 Cat &Cat::operator=(const Cat &rhs) {
-	std::cerr << "(Assignation operator called)" << std::endl;
 	if (this != &rhs) {
 		Animal::type = rhs.Animal::type;
-		*this->brain = *rhs.brain;
 	}
 	return *this;
 }

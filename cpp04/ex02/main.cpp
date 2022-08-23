@@ -62,9 +62,4 @@ int main()
 
 	delete dog;
 	delete cat;
-
-	std::cout << "=====[COPY CASE]========" << std::endl;
-	Cat a;
-	Cat b;
-	a = b;
 }
