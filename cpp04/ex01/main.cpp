@@ -97,7 +97,6 @@ int main()
 				c_cat[i]->getIdea(42);
 			}
 		}
-
 		for (int i = 0; i < N; i++)
 		{
 			delete animals[i];
