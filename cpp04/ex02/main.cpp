@@ -3,25 +3,15 @@
 #include "./ex00/Cat.hpp"
 #include "./ex00/Dog.hpp"
 
-
 int main()
 {
-	// Error
-	/*{
-		Animal animal;
-		animal.makeSound();
-	}*/
-	std::cout << std::endl;
-	{
-		Cat cat;
-		cat.makeSound();
-	}
-	std::cout << std::endl;
-	{
-		Dog dog;
-		dog.makeSound();
-	}
-	/*std::cout << "======[NORMAL CASE DOG CAT]=======" << std::endl;
+//	Dog basic;
+//	{
+//		Dog tmp = basic;
+//	}
+	//↑このテストが動かない
+
+	std::cout << "======[NORMAL CASE DOG CAT]=======" << std::endl;
 	Dog *dog = new Dog();
 	Cat *cat = new Cat();
 	for (size_t i = 0; i < 100; i++) {
@@ -77,5 +67,42 @@ int main()
 	std::cout << str << std::endl;
 
 	delete dog;
-	delete cat;*/
+	delete cat;
+
+	std::cout << "=====[COPY CASE]========" << std::endl;
+	Cat a;
+	Cat b;
+	a = b;
+
+	std::cout << "=====[SUBJECT CASE]========" << std::endl;
+
+	{
+		const Animal *j = new Dog();
+		const Animal *i = new Cat();
+		delete j;
+		delete i;
+	}
+	{
+	#define N 10
+
+		Animal *animals[N];
+		Dog		*c_dog[N / 2];
+		Cat 	*c_cat[N / 2];
+
+		for (size_t i = 0; i < N; i++) {
+			if (i % 2 == 0) {
+				animals[i] = new Dog();
+				c_dog[i / 2] = reinterpret_cast<Dog *>(animals[i]);
+				std::cout << *c_dog[i / 2]->getIdea(0) << std::endl;
+			} else {
+				animals[i] = new Cat();
+				c_cat[i / 2] = reinterpret_cast<Cat *>(animals[i]);
+				std::cout << *c_cat[i / 2]->getIdea(42) << std::endl;
+			}
+		}
+		for (int i = 0; i < N; i++)
+		{
+			delete animals[i];
+		}
+	}
 }

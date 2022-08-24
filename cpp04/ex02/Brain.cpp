@@ -7,6 +7,9 @@
 Brain::Brain()
 {
 	std::cerr << "(Brain default constructor called)" << std::endl;
+	for (size_t i = 0; i < 100; i++) {
+		ideas[i] = "IDEA";
+	}
 }
 
 Brain::~Brain()

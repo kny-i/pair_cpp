@@ -5,6 +5,12 @@
 
 int main()
 {
+//	Dog basic;
+//	{
+//		Dog tmp = basic;
+//	}
+	//↑このテストが動かない
+
 	std::cout << "======[NORMAL CASE DOG CAT]=======" << std::endl;
 	Dog *dog = new Dog();
 	Cat *cat = new Cat();
