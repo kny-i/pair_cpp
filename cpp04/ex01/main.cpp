@@ -75,8 +75,6 @@ int main()
 		const Animal *i = new Cat();
 		delete j;
 		delete i;
-
-		std::cout << std::endl;
 	}
 	{
 	#define N 10
@@ -88,13 +86,12 @@ int main()
 		for (size_t i = 0; i < N; i++) {
 			if (i % 2 == 0) {
 				animals[i] = new Dog();
-				c_dog[i] = reinterpret_cast<Dog *>(animals[i % 2]);
-//				static_cast<Dog *>(animals[i])->showIdeas();
-				c_dog[i]->getIdea(0);
+				c_dog[i / 2] = reinterpret_cast<Dog *>(animals[i]);
+				std::cout << *c_dog[i / 2]->getIdea(0) << std::endl;
 			} else {
 				animals[i] = new Cat();
-				c_cat[i] = reinterpret_cast<Cat *>(animals[i % 2 + 1]);
-				c_cat[i]->getIdea(42);
+				c_cat[i / 2] = reinterpret_cast<Cat *>(animals[i]);
+				std::cout << *c_cat[i / 2]->getIdea(42) << std::endl;
 			}
 		}
 		for (int i = 0; i < N; i++)

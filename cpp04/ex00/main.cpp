@@ -16,7 +16,6 @@ int main()
 		delete meta;
 		std::cerr << "____________________________________" << std::endl;
 
-
 		const Animal *j = new Dog();
 		std::cout << j->getType() << std::endl;
 		j->makeSound();

@@ -4,16 +4,14 @@
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog")
+Dog::Dog() : Animal("Dog"), brain_(new Brain())
 {
 	std::cerr << "(Dog default constructor called)" << std::endl;
-	this->brain_ = new Brain();
 }
 
 Dog::Dog(const Animal &rhs) : Animal("Dog") , brain_(new Brain())
 {
 	std::cerr << "(Dog copy constructor called)" << std::endl;
-	this->brain_ = new Brain();
 	*this = rhs;
 }
 
