@@ -4,16 +4,15 @@
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat() : Animal("Cat"), brain_(new Brain())
 {
 	std::cerr << "(Cat default constructor called)" << std::endl;
 	this->brain_ = new Brain();
 }
 
-Cat::Cat(const Animal &rhs)
+Cat::Cat(const Animal &rhs) : Animal("Cat"), brain_(new Brain())
 {
 	std::cerr << "(Cat copy constructor called)" << std::endl;
-	this->brain_ = new Brain();
 	*this = rhs;
 }
 

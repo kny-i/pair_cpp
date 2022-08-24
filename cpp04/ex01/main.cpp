@@ -67,4 +67,40 @@ int main()
 	Cat a;
 	Cat b;
 	a = b;
+
+	std::cout << "=====[SUBJECT CASE]========" << std::endl;
+
+	{
+		const Animal *j = new Dog();
+		const Animal *i = new Cat();
+		delete j;
+		delete i;
+
+		std::cout << std::endl;
+	}
+	{
+	#define N 10
+
+		Animal *animals[N];
+		Dog		*c_dog[N / 2];
+		Cat 	*c_cat[N / 2];
+
+		for (size_t i = 0; i < N; i++) {
+			if (i % 2 == 0) {
+				animals[i] = new Dog();
+				c_dog[i] = reinterpret_cast<Dog *>(animals[i % 2]);
+//				static_cast<Dog *>(animals[i])->showIdeas();
+				c_dog[i]->getIdea(0);
+			} else {
+				animals[i] = new Cat();
+				c_cat[i] = reinterpret_cast<Cat *>(animals[i % 2 + 1]);
+				c_cat[i]->getIdea(42);
+			}
+		}
+
+		for (int i = 0; i < N; i++)
+		{
+			delete animals[i];
+		}
+	}
 }
