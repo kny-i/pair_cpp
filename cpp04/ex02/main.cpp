@@ -5,11 +5,11 @@
 
 int main()
 {
-//	Dog basic;
-//	{
-//		Dog tmp = basic;
-//	}
-	//↑このテストが動かない
+	/*
+	std::cout << "[ADDED TEST]" << std::endl;
+	Animal *animal = new Animal();
+	animal->makeSound();
+	 */
 
 	std::cout << "======[NORMAL CASE DOG CAT]=======" << std::endl;
 	Dog *dog = new Dog();
