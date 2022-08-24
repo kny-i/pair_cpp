@@ -3,18 +3,15 @@
 #include "./ex00/Cat.hpp"
 #include "./ex00/Dog.hpp"
 
-/* size_tでもつとオーバーフローする可能性もありそう。 */
 
 int main()
 {
 	// Error
-	/*
-	{
+	/*{
 		Animal animal;
 		animal.makeSound();
-	}
-	*/
-/*	std::cout << std::endl;
+	}*/
+	std::cout << std::endl;
 	{
 		Cat cat;
 		cat.makeSound();
@@ -23,7 +20,7 @@ int main()
 	{
 		Dog dog;
 		dog.makeSound();
-	}*/
+	}
 	/*std::cout << "======[NORMAL CASE DOG CAT]=======" << std::endl;
 	Dog *dog = new Dog();
 	Cat *cat = new Cat();
