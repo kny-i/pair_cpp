@@ -7,7 +7,24 @@
 
 int main()
 {
-	std::cout << "======[NORMAL CASE DOG CAT]=======" << std::endl;
+	// Error
+	/*
+	{
+		Animal animal;
+		animal.makeSound();
+	}
+	*/
+/*	std::cout << std::endl;
+	{
+		Cat cat;
+		cat.makeSound();
+	}
+	std::cout << std::endl;
+	{
+		Dog dog;
+		dog.makeSound();
+	}*/
+	/*std::cout << "======[NORMAL CASE DOG CAT]=======" << std::endl;
 	Dog *dog = new Dog();
 	Cat *cat = new Cat();
 	for (size_t i = 0; i < 100; i++) {
@@ -63,5 +80,5 @@ int main()
 	std::cout << str << std::endl;
 
 	delete dog;
-	delete cat;
+	delete cat;*/
 }
