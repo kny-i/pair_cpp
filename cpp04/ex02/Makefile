@@ -3,11 +3,12 @@ srcs = $(wildcard ./*.cpp) \
 		$(wildcard ./ex00/*.cpp)
 objs = $(srcs:.cpp=.o)
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address -pedantic
+CXX = c++
 
 all: $(NAME)
 
 $(NAME): $(objs)
-	c++ $(CXXFLAGS) $(objs) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(objs) -o $(NAME)
 
 clean:
 	$(RM) ./$(objs)
