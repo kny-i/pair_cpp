@@ -3,6 +3,8 @@
 #include "./ex00/Cat.hpp"
 #include "./ex00/Dog.hpp"
 
+/* size_tでもつとオーバーフローする可能性もありそう。 */
+
 int main()
 {
 	std::cout << "======[NORMAL CASE DOG CAT]=======" << std::endl;

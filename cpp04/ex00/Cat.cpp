@@ -2,6 +2,8 @@
 // Created by 小平波琉 on 2022/08/14.
 //
 
+/* default constructorと初期化するためのconstructorは統一して作った方がいい */
+
 #include "Cat.hpp"
 
 Cat::Cat() : Animal("Cat")
