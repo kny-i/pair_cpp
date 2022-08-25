@@ -1,6 +1,4 @@
-//
-// Created by 小平波琉 on 2022/08/04.
-//
+
 
 #ifndef CPP_SHRUBBERYCREATIONFORM_HPP
 #define CPP_SHRUBBERYCREATIONFORM_HPP
