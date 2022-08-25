@@ -1,6 +1,4 @@
-//
-// Created by 小平波琉 on 2022/08/15.
-//
+
 
 #ifndef CPP_WRONGANIMAL_HPP
 #define CPP_WRONGANIMAL_HPP

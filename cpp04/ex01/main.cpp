@@ -5,12 +5,11 @@
 
 int main()
 {
-//	Dog basic;
-//	{
-//		Dog tmp = basic;
-//	}
-	//↑このテストが動かない
-
+	Dog basic;
+	{
+		Dog tmp = basic;
+	}
+	/*
 	std::cout << "======[NORMAL CASE DOG CAT]=======" << std::endl;
 	Dog *dog = new Dog();
 	Cat *cat = new Cat();
@@ -104,5 +103,5 @@ int main()
 		{
 			delete animals[i];
 		}
-	}
+	}*/
 }

@@ -1,6 +1,4 @@
-//
-// Created by 小平波琉 on 2022/08/14.
-//
+
 
 #include "Cat.hpp"
 
@@ -24,7 +22,7 @@ Cat::~Cat()
 Cat &Cat::operator=(const Cat &rhs) {
 	std::cerr << "(Assignation operator called)" << std::endl;
 	if (this != &rhs) {
-		Animal::type = rhs.Animal::type;
+		this->type = rhs.type;
 		*this->brain_ = *rhs.brain_;
 	}
 	return *this;

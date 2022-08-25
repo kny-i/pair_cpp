@@ -1,6 +1,4 @@
-//
-// Created by 小平波琉 on 2022/08/14.
-//
+
 
 #include "Dog.hpp"
 
@@ -23,7 +21,7 @@ Dog::~Dog()
 
 Dog &Dog::operator=(const Dog &rhs) {
 	if (this != &rhs) {
-		Animal::type = rhs.Animal::type;
+		this->type = rhs.type;
 		*this->brain_ = *rhs.brain_;
 	}
 	return *this;

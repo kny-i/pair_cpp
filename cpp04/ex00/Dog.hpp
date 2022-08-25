@@ -1,6 +1,3 @@
-//
-// Created by 小平波琉 on 2022/08/14.
-//
 
 #ifndef CPP_DOG_HPP
 #define CPP_DOG_HPP

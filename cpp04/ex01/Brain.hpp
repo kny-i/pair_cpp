@@ -1,6 +1,3 @@
-//
-// Created by 小平波琉 on 2022/08/21.
-//
 
 #ifndef CPP_BRAIN_HPP
 #define CPP_BRAIN_HPP
