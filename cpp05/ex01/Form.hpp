@@ -8,14 +8,28 @@
 
 class Form {
 public:
+	class GradeTooHighException : public std::exception {};
+	class GradeTooLowException : public std::exception {};
+
+public:
 	Form();
 	Form(std::string kName, const size_t kGradeForSign, const size_t kGradeForExcute);
+	~Form();
+	Form &operator=(const Form &rhs);
+
+	const std::string &getKName() const;
+	bool isSigned() const;
+	void setIsSigned(bool isSigned);
+	const size_t getKGradeForSign() const;
+	const size_t getKGradeForExcute() const;
 
 private:
 	const std::string kName_;
-	bool sign_;
+	bool isSigned_;
 	const size_t kGradeForSign_;
 	const size_t kGradeForExcute_;
 };
+
+std::ostream& operator<<(std::ostream &os, const Form &form);
 
 #endif //CPP_FORM_HPP

@@ -23,7 +23,7 @@ public:
 	void setGrade(size_t grade);
 
 private:
-	const std::string name_;
+	const std::string kName_;
 	size_t grade_;
 };
 

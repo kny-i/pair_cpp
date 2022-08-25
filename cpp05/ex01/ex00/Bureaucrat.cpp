@@ -24,12 +24,12 @@ void Bureaucrat::gradeDown()
 }
 
 /* canonical form & accessor */
-Bureaucrat::Bureaucrat() : name_("NomalBureaucrat"), grade_(42)
+Bureaucrat::Bureaucrat() : kName_("NomalBureaucrat"), grade_(42)
 {
 	std::cerr << "(Bureaucrat constructor called)" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string name, size_t grade) : name_(name), grade_(grade)
+Bureaucrat::Bureaucrat(std::string name, size_t grade) : kName_(name), grade_(grade)
 {
 	std::cerr << "(Bureaucrat constructor called)" << std::endl;
 	if (grade_ < 1) {
@@ -58,7 +58,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs) {
 }
 
 const std::string &Bureaucrat::getName() const {
-	return name_;
+	return kName_;
 }
 
 size_t Bureaucrat::getGrade() const {
