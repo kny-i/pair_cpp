@@ -1,13 +1,9 @@
-//
-// Created by 小平波琉 on 2022/08/04.
-//
-
 #include "Bureaucrat.hpp"
 
 
 void Bureaucrat::gradeUp()
 {
-	if (grade_ < 1) {
+	if (grade_ <= 1) {
 		throw GradeTooHighException();
 	} else {
 		grade_ -= 1;
@@ -16,7 +12,7 @@ void Bureaucrat::gradeUp()
 
 void Bureaucrat::gradeDown()
 {
-	if (grade_ > 150) {
+	if (grade_ >= 150) {
 		throw GradeTooLowException();
 	} else {
 		grade_ += 1;
@@ -66,6 +62,11 @@ size_t Bureaucrat::getGrade() const {
 }
 
 void Bureaucrat::setGrade(size_t grade) {
+	if (grade_ < 1) {
+		throw GradeTooHighException();
+	} else if (grade_ > 150) {
+		throw GradeTooHighException();
+	}
 	grade_ = grade;
 }
 

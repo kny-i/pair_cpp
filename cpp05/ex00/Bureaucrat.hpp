@@ -9,6 +9,10 @@
 
 class Bureaucrat {
 public:
+	class GradeTooHighException : public std::exception {};
+	class GradeTooLowException : public std::exception {};
+
+public:
 	Bureaucrat();
 	Bureaucrat(std::string name, size_t grade);
 	Bureaucrat(const Bureaucrat &rhs);
@@ -25,14 +29,6 @@ public:
 private:
 	const std::string name_;
 	size_t grade_;
-};
-
-class GradeTooHighException : public std::exception {
-
-};
-
-class GradeTooLowException : public std::exception {
-
 };
 
 std::ostream& operator<<(std::ostream &os, const Bureaucrat &bureaucrat);

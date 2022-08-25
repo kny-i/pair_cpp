@@ -17,7 +17,6 @@ int main()
 			bureaucrat.gradeUp();
 		}
 		std::cout << bureaucrat << std::endl;
-
 	} catch (GradeTooHighException e) {
 		std::cerr << "GRADE IS TOO HIGH " << e.what() << std::endl;
 	} catch (GradeTooLowException e) {
@@ -26,4 +25,3 @@ int main()
 		std::cerr << "ERROR" << e.what() << std::endl;
 	}
 }
-
