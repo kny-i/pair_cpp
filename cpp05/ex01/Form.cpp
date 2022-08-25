@@ -5,7 +5,7 @@ Form::Form(): kName_("default"), isSigned_(false), kGradeForSign_(50), kGradeFor
 	std::cerr << "(Form constructor called)" << std::endl;
 }
 
-Form::Form(const Form &rhs):kName_(rhs.kName_), isSigned_(false), kGradeForSign_(rhs.getKGradeForSign()), kGradeForExcute_(rhs.getKGradeForExcute())
+Form::Form(const Form &rhs) : kName_(rhs.kName_), isSigned_(false), kGradeForSign_(rhs.getKGradeForSign()), kGradeForExcute_(rhs.getKGradeForExcute())
 {
 	std::cerr << "(Form Copy constructor called)" << std::endl;
 }
@@ -27,6 +27,7 @@ Form &Form::operator=(const Form &rhs)
 	return *this;
 }
 
+
 const std::string &Form::getKName() const {
 	return kName_;
 }
@@ -45,6 +46,18 @@ size_t Form::getKGradeForSign() const {
 
 size_t Form::getKGradeForExcute() const {
 	return kGradeForExcute_;
+}
+
+void Form::beSigned(const Bureaucrat &signer)
+{
+	if (signer.getGrade() > this->getKGradeForSign()) {
+		throw Form::GradeTooHighException();
+	} else if (this->isSigned() == true) {
+		std::cout << "Form is already signed" << std::endl;
+	} else {
+		this->setIsSigned(true);
+		std::cout << "Form is signed by " << signer.getName() << std::endl;
+	}
 }
 
 std::ostream& operator<<(std::ostream &os, const Form &form)

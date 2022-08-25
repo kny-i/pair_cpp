@@ -18,7 +18,7 @@ public:
 	Form(const Form &rhs);
 	~Form();
 
-	void beSigned(Bureaucrat &signer);
+	void beSigned(const Bureaucrat &signer);
 	const std::string &getKName() const;
 	bool isSigned() const;
 	void setIsSigned(bool isSigned);
