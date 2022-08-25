@@ -1,5 +1,3 @@
-
-
 #ifndef CPP_DOG_HPP
 #define CPP_DOG_HPP
 #include "Animal.hpp"

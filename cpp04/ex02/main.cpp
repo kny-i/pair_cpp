@@ -5,12 +5,10 @@
 
 int main()
 {
-	/*
-	std::cout << "[ADDED TEST]" << std::endl;
-	Animal *animal = new Animal();
-	animal->makeSound();
-	 */
 
+	/*std::cout << "[ADDED TEST]" << std::endl;
+	Animal *animal = new Animal();
+	animal->makeSound();*/
 	std::cout << "======[NORMAL CASE DOG CAT]=======" << std::endl;
 	Dog *dog = new Dog();
 	Cat *cat = new Cat();
