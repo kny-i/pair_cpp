@@ -33,7 +33,7 @@ Bureaucrat::Bureaucrat(std::string name, size_t grade) : kName_(name), grade_(gr
 		throw GradeTooHighException();
 	}
 	if (grade_ > 150) {
-		throw GradeTooHighException();
+		throw GradeTooLowException();
 	}
 }
 
@@ -44,6 +44,7 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat::Bureaucrat(const Bureaucrat &rhs)
 {
+	std::cerr << "(Bureaucrat copy constructor called)" << std::endl;
 	*this = rhs;
 }
 
