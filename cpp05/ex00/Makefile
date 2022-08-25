@@ -28,4 +28,4 @@ out: all
 err: all
 	./$(NAME) 1>/dev/null
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re out err run

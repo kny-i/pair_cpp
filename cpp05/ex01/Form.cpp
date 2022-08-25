@@ -5,19 +5,23 @@ Form::Form(): kName_("default"), isSigned_(false), kGradeForSign_(50), kGradeFor
 	std::cerr << "(Form constructor called)" << std::endl;
 }
 
-Form::Form(const Form &rhs):
+Form::Form(const Form &rhs)
 {
 	std::cerr << "(Form Copy constructor called)" << std::endl;
-	*this = rhs;
 }
 
-Form::operator=(const Form &rhs)
+Form::~Form()
+{
+	std::cout << "(Form Deconstructor called)" << std::endl;
+}
+
+Form &Form::operator=(const Form &rhs)
 {
 	if (this != &rhs) {
 		this->isSigned_ = rhs.isSigned();
-//		this->kName_ = rhs.getKName();
-//		this->kGradeForExcute_ = rhs.getKGradeForExcute();
-//		this->kGradeForSign_ = rhs.getKGradeForSign();
+		const_cast<std::string&>this->kName_ = rhs.getKName();
+		const_cast<int&>this->kGradeForExcute_ = rhs.getKGradeForExcute();
+		const_cast<int&>this->kGradeForSign_ = rhs.getKGradeForSign();
 	}
 	return *this;
 }
@@ -50,3 +54,4 @@ std::ostream& operator<<(std::ostream &os, const Form &form)
 	os << "1 is signed, but 0 is unsigned : " << form.isSigned();
 	return os;
 }
+
