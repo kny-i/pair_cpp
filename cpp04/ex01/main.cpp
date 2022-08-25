@@ -6,8 +6,10 @@
 int main()
 {
 	Dog basic;
+	std::cout << basic.getIdea(0) << std::endl;
 	{
 		Dog tmp = basic;
+		std::cout << tmp.getIdea(0) << std::endl;
 	}
 	/*
 	std::cout << "======[NORMAL CASE DOG CAT]=======" << std::endl;
