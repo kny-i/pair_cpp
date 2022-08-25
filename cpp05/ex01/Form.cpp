@@ -66,7 +66,7 @@ std::ostream& operator<<(std::ostream &os, const Form &form)
 	os << "name : " <<  form.getKName() << std::endl;
 	os << "form grade for sign : " << form.getKGradeForSign() << std::endl;
 	os << "form grade for excute : " << form.getKGradeForExcute() << std::endl;
-	os << "1 is signed, but 0 is unsigned : " << form.isSigned() << std::endl;
+	os << "signed status : " << form.isSigned() << std::endl;
 	std::cout << "-------------------------------" << std::endl;
 	return os;
 }

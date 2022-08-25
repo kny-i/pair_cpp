@@ -11,6 +11,7 @@ int	main(void)
 		std::cout << a << std::endl;
 		std::cout << b << std::endl;
 		b.beSigned(a);
+		std::cout << b << std::endl;
 	} catch (Form::GradeTooHighException &e) {
 		std::cerr << "catch Grade Too High Exception" << std::endl;
 	}
