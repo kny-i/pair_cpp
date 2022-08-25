@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+#include "./ex00/Bureaucrat.hpp"
 
 class Form {
 public:
@@ -17,6 +18,7 @@ public:
 	Form(const Form &rhs);
 	~Form();
 
+	void beSigned(Bureaucrat &signer);
 	const std::string &getKName() const;
 	bool isSigned() const;
 	void setIsSigned(bool isSigned);
