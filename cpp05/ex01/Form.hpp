@@ -13,15 +13,15 @@ public:
 
 public:
 	Form();
-	Form(std::string kName, const size_t kGradeForSign, const size_t kGradeForExcute);
-	~Form();
 	Form &operator=(const Form &rhs);
+	Form(const Form &rhs);
+	~Form();
 
 	const std::string &getKName() const;
 	bool isSigned() const;
 	void setIsSigned(bool isSigned);
-	const size_t getKGradeForSign() const;
-	const size_t getKGradeForExcute() const;
+	size_t getKGradeForSign() const;
+	size_t getKGradeForExcute() const;
 
 private:
 	const std::string kName_;

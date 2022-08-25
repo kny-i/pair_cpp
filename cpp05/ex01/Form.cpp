@@ -1,5 +1,27 @@
 #include "Form.hpp"
 
+Form::Form(): kName_("default"), isSigned_(false), kGradeForSign_(50), kGradeForExcute_(50)
+{
+	std::cerr << "(Form constructor called)" << std::endl;
+}
+
+Form::Form(const Form &rhs):
+{
+	std::cerr << "(Form Copy constructor called)" << std::endl;
+	*this = rhs;
+}
+
+Form::operator=(const Form &rhs)
+{
+	if (this != &rhs) {
+		this->isSigned_ = rhs.isSigned();
+//		this->kName_ = rhs.getKName();
+//		this->kGradeForExcute_ = rhs.getKGradeForExcute();
+//		this->kGradeForSign_ = rhs.getKGradeForSign();
+	}
+	return *this;
+}
+
 const std::string &Form::getKName() const {
 	return kName_;
 }
@@ -12,11 +34,11 @@ void Form::setIsSigned(bool isSigned) {
 	isSigned_ = isSigned;
 }
 
-const size_t Form::getKGradeForSign() const {
+size_t Form::getKGradeForSign() const {
 	return kGradeForSign_;
 }
 
-const size_t Form::getKGradeForExcute() const {
+size_t Form::getKGradeForExcute() const {
 	return kGradeForExcute_;
 }
 

@@ -1,7 +1,3 @@
-//
-// Created by 小平波琉 on 2022/08/04.
-//
-
 #include "Bureaucrat.hpp"
 
 int main()
@@ -17,9 +13,9 @@ int main()
 			bureaucrat.gradeUp();
 		}
 		std::cout << bureaucrat << std::endl;
-	} catch (GradeTooHighException e) {
+	} catch (Bureaucrat::GradeTooHighException e) {
 		std::cerr << "GRADE IS TOO HIGH " << e.what() << std::endl;
-	} catch (GradeTooLowException e) {
+	} catch (Bureaucrat::GradeTooLowException e) {
 		std::cerr << "GRADE IS TOO LOW " << e.what() << std::endl;
 	} catch (std::exception e) {
 		std::cerr << "ERROR" << e.what() << std::endl;
