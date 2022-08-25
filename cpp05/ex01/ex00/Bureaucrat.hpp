@@ -18,6 +18,8 @@ public:
 	void gradeUp();
 	void gradeDown();
 
+	void beSigned(Bureaucrat &signer);
+
 	const std::string &getName() const;
 	size_t getGrade() const;
 	void setGrade(size_t grade);
