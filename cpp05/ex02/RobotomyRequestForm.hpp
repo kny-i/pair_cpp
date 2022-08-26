@@ -13,7 +13,7 @@ class	Form;
 class	RobotomyRequestForm : public Form
 {
 public:
-	RobotomyRequestForm(voi::string target);
+	RobotomyRequestForm(std::string target);
 	RobotomyRequestForm(const RobotomyRequestForm& other);
 	RobotomyRequestForm&	operator=(const RobotomyRequestForm& other);
 	~RobotomyRequestForm();

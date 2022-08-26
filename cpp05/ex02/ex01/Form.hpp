@@ -18,8 +18,6 @@ public:
 	Form(const Form &rhs);
 	~Form();
 
-	virtual void	execute(const Bureaucrat& b) = 0;
-
 	void beSigned(const Bureaucrat &signer);
 	const std::string &getKName() const;
 	bool isSigned() const;

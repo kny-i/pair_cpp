@@ -24,8 +24,8 @@ PresidentialPardonForm::~PresidentialPardonForm(void)
 }
 
 /* Member funcs */
-void	PresidentialPardonForm::execute(const Bureaucrat& b)
-{
-	this->throwExecuteException(b);
-	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
-}
+//void	PresidentialPardonForm::execute(const Bureaucrat& b)
+//{
+//	this->throwExecuteException(b);
+//	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+//}

@@ -4,8 +4,8 @@
 #define CPP_SHRUBBERYCREATIONFORM_HPP
 
 # include <iostream>
-# include "Bureaucrat.hpp"
-# include "Form.hpp"
+# include "./ex01/ex00/Bureaucrat.hpp"
+# include "./ex01/Form.hpp"
 
 class	Bureaucrat;
 class	Form;
@@ -13,17 +13,14 @@ class	Form;
 class	ShrubberyCreationForm : public Form
 {
 public:
-	ShrubberyCreationForm(void);
+	ShrubberyCreationForm();
 	ShrubberyCreationForm(std::string target);
 	ShrubberyCreationForm(const ShrubberyCreationForm& other);
 	ShrubberyCreationForm&	operator=(const ShrubberyCreationForm& other);
-	~ShrubberyCreationForm(void);
+	~ShrubberyCreationForm();
 
 	void	execute(const Bureaucrat& b);
 
-	class ShrubberyFileException : public std::exception();
-
+	class ShrubberyFileException : public std::exception{};
 };
-
-
 #endif //CPP_SHRUBBERYCREATIONFORM_HPP
