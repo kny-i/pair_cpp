@@ -15,7 +15,8 @@ public:
 	void gradeUp();
 	void gradeDown();
 
-	void beSigned(Bureaucrat &signer);
+	void	signForm(Form& form) const;
+	void	executeForm(Form& form) const;
 
 	const std::string &getName() const;
 	size_t getGrade() const;
