@@ -18,17 +18,48 @@ int	main(void)
 		std::cerr << e.what() << std::endl;
 	}
 
-	try {
-		std::cout << "test-B" << std::endl;
-		Bureaucrat 	c("Yamane", 60);
-		Form		d;
+	std::cout << "=====[TEST B]======" << std::endl;
+	{
+		try {
+			Bureaucrat 	yamane("Yamane", 50);
+			Form		form;
 
-		std::cout << c << std::endl;
-		std::cout << d<< std::endl;
-		d.beSigned(c);
-		std::cout << d<< std::endl;
-	} catch(std::exception &e) {
-		std::cerr << e.what() << std::endl;
+			std::cout << yamane << std::endl;
+			std::cout << form<< std::endl;
+			form.beSigned(yamane);
+			std::cout << form << std::endl;
+		} catch(std::exception &e) {
+			std::cerr << e.what() << std::endl;
+		}
+	}
+
+	std::cout << "=====[TEST C]=====" << std::endl;
+	{
+		try {
+			Bureaucrat 	amane("Amane", 80);
+			Form		form;
+
+			std::cout << amane << std::endl;
+			std::cout << form << std::endl;
+			amane.signForm(form);
+			std::cout << form << std::endl;
+		} catch(std::exception &e) {
+			std::cerr << e.what() << std::endl;
+		}
+	}
+	std::cout << "=====[TEST D]=====" << std::endl;
+	{
+		try {
+			Bureaucrat 	mone("Mone", 20);
+			Form		form;
+
+			std::cout << mone << std::endl;
+			std::cout << form << std::endl;
+			mone.signForm(form);
+			std::cout << form << std::endl;
+		} catch(std::exception &e) {
+			std::cerr << e.what() << std::endl;
+		}
 	}
 }
 
