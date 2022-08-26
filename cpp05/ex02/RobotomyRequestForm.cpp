@@ -1,7 +1,9 @@
 #include " RobotomyRequestForm.hpp"
 
+
+
 /* Caronical */
-RobotomyRequestForm::RobotomyRequestForm(void) : Form()
+RobotomyRequestForm::RobotomyRequestForm() : Form()
 {
 }
 
@@ -16,7 +18,7 @@ RobotomyRequestForm&	RobotomyRequestForm::operator=(const RobotomyRequestForm& o
 	return (*this);
 }
 
-RobotomyRequestForm::~RobotomyRequestForm(void)
+RobotomyRequestForm::~RobotomyRequestForm()
 {
 }
 

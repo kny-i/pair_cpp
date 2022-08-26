@@ -15,9 +15,8 @@ class	RobotomyRequestForm : public Form
 public:
 	RobotomyRequestForm(voi::string target);
 	RobotomyRequestForm(const RobotomyRequestForm& other);
-	RobotomyRequestForm&	operator=(const RobotomyRequestForm& other);d);
-	RobotomyRequestForm(std
-	~RobotomyRequestForm(void);
+	RobotomyRequestForm&	operator=(const RobotomyRequestForm& other);
+	~RobotomyRequestForm();
 
 	void	execute(const Bureaucrat& b);
 };
