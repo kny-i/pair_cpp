@@ -12,11 +12,11 @@ class PresidentialPardonForm : public Form {
 public:
 	PresidentialPardonForm();
 	PresidentialPardonForm(std::string target);
-	PresidentialPardonForm(const PresidentialPardonForm &other);
-	PresidentialPardonForm &operator=(const PresidentialPardonForm& other);
+	PresidentialPardonForm(const PresidentialPardonForm &rhs);
+	PresidentialPardonForm &operator=(const PresidentialPardonForm &rhs);
 	~PresidentialPardonForm(void);
 
-	void	execute(const Bureaucrat& b);
+	void	execute(const Bureaucrat &b);
 };
 
 #endif //CPP_PRESIDENTIALPARDONFORM_HPP
