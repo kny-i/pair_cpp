@@ -62,12 +62,12 @@ void Form::beSigned(const Bureaucrat &signer)
 
 std::ostream& operator<<(std::ostream &os, const Form &form)
 {
-	std::cout << "----------Form info ----------" << std::endl;
+	std::cout << "__________Form info__________" << std::endl;
 	os << "name : " <<  form.getKName() << std::endl;
 	os << "form grade for sign : " << form.getKGradeForSign() << std::endl;
 	os << "form grade for excute : " << form.getKGradeForExcute() << std::endl;
 	os << "signed status : " << form.isSigned() << std::endl;
-	std::cout << "-------------------------------" << std::endl;
+	std::cout << "_____________________________" << std::endl;
 	return os;
 }
 

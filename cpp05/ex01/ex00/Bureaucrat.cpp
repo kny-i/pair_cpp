@@ -96,9 +96,9 @@ void Bureaucrat::signForm(Form &form)
 		<< this->getName()
 		<< " couldn’t sign "
 		<< form.getKName()
-		<<  "because"
+		<<  "because ["
 		<< e.what()
-		<< "." << std::endl;
+		<< "]." << std::endl;
 	}
 }
 
