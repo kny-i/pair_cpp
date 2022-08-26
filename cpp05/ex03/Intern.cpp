@@ -13,6 +13,7 @@ Intern::~Intern()
 Intern::Intern(const Intern &rhs)
 {
 	std::cerr << "(Copy constructor called)" << std::endl;
+	*this = rhs;
 }
 
 Intern &Intern::operator=(const Intern &rhs) {
@@ -22,4 +23,8 @@ Intern &Intern::operator=(const Intern &rhs) {
 	return *this;
 }
 
-
+Form *Intern::makeForm(std::string name, std::string target)
+{
+	std::cout << "Intern creates " << formName << " form" << std::endl;
+	return NULL;
+}
