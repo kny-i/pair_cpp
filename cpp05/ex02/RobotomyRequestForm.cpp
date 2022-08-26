@@ -3,24 +3,33 @@
 
 
 /* Caronical */
-//RobotomyRequestForm::RobotomyRequestForm() : Form()
-//{
-//}
-
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : Form(other)
+RobotomyRequestForm::RobotomyRequestForm() : Form()
 {
+	std::cerr << "(RobotmyRequestForm default constructor called)" << std::endl;
 }
 
-RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm& other)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form()
 {
-	if (this != &other) {
-		Form::operator=(other);
+	(void)target;
+	std::cerr << "(RobotmyRequestForm constructor called)" << std::endl;
+}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &rhs) : Form(rhs)
+{
+	std::cerr << "(RobotmyRequestForm copy constructor called)" << std::endl;
+}
+
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &rhs)
+{
+	if (this != &rhs) {
+		Form::operator=(rhs);
 	}
 	return *this;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
+	std::cerr << "(RobotmyRequestForm destructor called)" << std::endl;
 }
 
 /* Member funcs */
