@@ -8,13 +8,13 @@
 # include "./ex01/ex00/Bureaucrat.hpp"
 # include "./ex01/Form.hpp"
 
-class	Bureaucrat;
-class	Form;
+//class	Bureaucrat;
+//class	Form;
 
-class	PresidentialPardonForm : public Form
-{
+class PresidentialPardonForm : public Form {
+
 public:
-	PresidentialPardonForm(void);
+	PresidentialPardonForm();
 	PresidentialPardonForm(std::string target);
 	PresidentialPardonForm(const PresidentialPardonForm& other);
 	PresidentialPardonForm&	operator=(const PresidentialPardonForm& other);

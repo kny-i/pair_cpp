@@ -3,24 +3,28 @@
 #include "PresidentialPardonForm.hpp"
 
 /* Caronical */
-PresidentialPardonForm::PresidentialPardonForm(void) : Form()
+PresidentialPardonForm::PresidentialPardonForm() : Form()
 {
+	std::cerr << "(PresidentialPardonForm constructor called)" << std::endl;
 }
 
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other) : Form(other)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &rhs) : Form(rhs)
 {
+	std::cerr << "(PresidentialPardonForm copy constructor called)" << std::endl;
 }
 
-PresidentialPardonForm&	PresidentialPardonForm::operator=(const PresidentialPardonForm& other)
+PresidentialPardonForm&	PresidentialPardonForm::operator=(const PresidentialPardonForm &rhs)
 {
-	if (this != &other)
-		Form::operator=(other);
-	return (*this);
+	if (this != &rhs) {
+		Form::operator=(rhs);
+	}
+	return *this;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(void)
 {
+	std::cerr << "PresidentialPardonForm destructor called" << std::endl;
 }
 
 /* Member funcs */
