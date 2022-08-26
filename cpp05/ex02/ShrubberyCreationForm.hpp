@@ -1,9 +1,9 @@
 #ifndef CPP_SHRUBBERYCREATIONFORM_HPP
 #define CPP_SHRUBBERYCREATIONFORM_HPP
 
-# include <iostream>
-# include "./ex01/ex00/Bureaucrat.hpp"
-# include "./ex01/Form.hpp"
+#include <iostream>
+#include "./ex01/ex00/Bureaucrat.hpp"
+#include "./ex01/Form.hpp"
 
 class	ShrubberyCreationForm : public Form
 {
