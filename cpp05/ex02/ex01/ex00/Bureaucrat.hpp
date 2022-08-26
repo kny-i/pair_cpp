@@ -22,6 +22,8 @@ public:
 	size_t getGrade() const;
 	void setGrade(size_t grade);
 
+	void
+
 private:
 	const std::string kName_;
 	size_t grade_;

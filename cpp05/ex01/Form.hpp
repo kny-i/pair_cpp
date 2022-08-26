@@ -7,6 +7,7 @@
 #include <string>
 #include "./ex00/Bureaucrat.hpp"
 
+class Bureaucrat;
 class Form {
 public:
 	class GradeTooHighException : public std::exception {};

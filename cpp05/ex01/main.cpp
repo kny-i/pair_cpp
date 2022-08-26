@@ -13,13 +13,6 @@ int	main(void)
 		b.beSigned(a);
 		std::cout << b << std::endl;
 	}
-	catch (Form::GradeTooHighException &e) {
-		std::cerr << "catch Grade Too High Exception" << std::endl;
-	}
-	catch(Form::GradeTooLowException &e)
-	{
-		std::cerr << "catch Grade Too Low Exception " << std::endl;
-	}
 	catch(std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
