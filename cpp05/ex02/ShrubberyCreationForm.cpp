@@ -15,7 +15,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 	(void)target;
 }
 
-ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &rhs) {
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &rhs)
+{
 	if (this != &rhs) {
 		Form::operator=(rhs);
 	}

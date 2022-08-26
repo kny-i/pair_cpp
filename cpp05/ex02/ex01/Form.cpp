@@ -28,23 +28,28 @@ Form &Form::operator=(const Form &rhs)
 }
 
 
-const std::string &Form::getKName() const {
+const std::string &Form::getKName() const
+{
 	return kName_;
 }
 
-bool Form::isSigned() const {
+bool Form::isSigned() const
+{
 	return isSigned_;
 }
 
-void Form::setIsSigned(bool isSigned) {
+void Form::setIsSigned(bool isSigned)
+{
 	isSigned_ = isSigned;
 }
 
-size_t Form::getKGradeForSign() const {
+size_t Form::getKGradeForSign() const
+{
 	return kGradeForSign_;
 }
 
-size_t Form::getKGradeForExcute() const {
+size_t Form::getKGradeForExcute() const
+{
 	return kGradeForExcute_;
 }
 
