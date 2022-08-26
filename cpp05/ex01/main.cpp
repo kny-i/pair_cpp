@@ -18,27 +18,17 @@ int	main(void)
 		std::cerr << e.what() << std::endl;
 	}
 
-	try
-	{
+	try {
 		std::cout << "test-B" << std::endl;
 		Bureaucrat 	c("Yamane", 60);
 		Form		d;
+
 		std::cout << c << std::endl;
 		std::cout << d<< std::endl;
 		d.beSigned(c);
 		std::cout << d<< std::endl;
-	}
-	catch (Form::GradeTooHighException &e) {
-		std::cerr << "catch Grade Too High Exception" << std::endl;
-	}
-	catch(Form::GradeTooLowException &e)
-	{
-		std::cerr << "catch Grade Too Low Exception " << std::endl;
-	}
-	catch(std::exception &e)
-	{
+	} catch(std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
-
 }
 

@@ -2,6 +2,7 @@
 #define CPP_BUREAUCRAT_HPP
 
 #include <iostream>
+#include <string>
 
 class Bureaucrat {
 public:
