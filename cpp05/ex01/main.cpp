@@ -3,19 +3,20 @@
 
 int	main(void)
 {
-	try
+	std::cout << "=====[TEST A]=====" << std::endl;
 	{
-		std::cout << "test-A" << std::endl;
-		Bureaucrat 	a("Nakane", 40);
-		Form		b;
-		std::cout << a << std::endl;
-		std::cout << b << std::endl;
-		b.beSigned(a);
-		std::cout << b << std::endl;
-	}
-	catch(std::exception &e)
-	{
-		std::cerr << e.what() << std::endl;
+		try
+		{
+			Bureaucrat 	nakane("Nakane", 1);
+			Form		form;
+			std::cout << nakane << std::endl;
+			std::cout << form << std::endl;
+			form.beSigned(nakane);
+			std::cout << form << std::endl;
+		}
+		catch(std::exception &e) {
+			std::cerr << e.what() << std::endl;
+		}
 	}
 
 	std::cout << "=====[TEST B]======" << std::endl;
