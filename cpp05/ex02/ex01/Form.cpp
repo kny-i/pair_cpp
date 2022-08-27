@@ -86,3 +86,19 @@ const char *Form::GradeTooLowException::what() const throw()
 {
 	return "GRADE IS TOOLOW!!";
 }
+
+const char *Form::UnsignedException::what() const throw()
+{
+	return "FORM IS UNSIGNED!!";
+}
+
+void Form::excute(const Bureaucrat &excutor) const
+{
+	if (this->isSigned() == false) {
+		throw Form::UnsignedException();
+	}
+	if (this->getKGradeForExcute() < excutor.getGrade()) {
+		throw GradeTooLowException();
+	}
+	formAction();
+}
