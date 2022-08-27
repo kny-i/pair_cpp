@@ -1,18 +1,21 @@
 #include "RobotomyRequestForm.hpp"
 
-
-
-/* Caronical */
 RobotomyRequestForm::RobotomyRequestForm()
-: Form("Default RobotomyRequestForm", 72, 45)
+		: Form("Default RobotomyRequestForm",
+			   72,
+			   45,
+			   "Default RobotomyRequestForm target")
 {
 	std::cerr << "(Default RobotmyRequestForm default constructor called)" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form()
+RobotomyRequestForm::RobotomyRequestForm(std::string target)
+		: Form("Default RobotomyRequestForm",
+			   72,
+			   45,
+			   target)
 {
-	(void)target;
-	std::cerr << "(RobotmyRequestForm constructor called)" << std::endl;
+	std::cerr << "(Default RobotmyRequestForm constructor called)" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &rhs) : Form(rhs)
@@ -34,9 +37,9 @@ RobotomyRequestForm::~RobotomyRequestForm()
 }
 
 /* Member funcs */
-void	RobotomyRequestForm::execute(const Bureaucrat &b)
+void RobotomyRequestForm::execute(const Bureaucrat &target)
 {
-	(void)b;
+	(void)target;
 //	this->throwExecuteException(b);
 	std::cout << "\\\\ Bzzzzzzzzzzzzzz //" << std::endl;
 	std::srand(time(NULL));

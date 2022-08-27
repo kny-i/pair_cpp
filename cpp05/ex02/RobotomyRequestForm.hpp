@@ -16,7 +16,7 @@ public:
 	RobotomyRequestForm	&operator=(const RobotomyRequestForm &rhs);
 	~RobotomyRequestForm();
 
-	void	execute(const Bureaucrat &b);
+	virtual void execute(const Bureaucrat &target);
 };
 
 #endif //CPP_ROBOTOMYREQUESTFORM_HPP

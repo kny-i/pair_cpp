@@ -1,7 +1,19 @@
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-: Form("Default ShrubberyCreationForm", 145, 137)
+		: Form("Default ShrubberyCreationForm",
+			   145,
+			   137,
+			   "Default ShrubberyCreationForm target")
+{
+	std::cerr << "(ShrubberyCreationForm default constructor called)" << std::endl;
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
+		: Form("Default ShrubberyCreationForm",
+			   145,
+			   137,
+			   target)
 {
 	std::cerr << "(ShrubberyCreationForm default constructor called)" << std::endl;
 }
@@ -9,11 +21,6 @@ ShrubberyCreationForm::ShrubberyCreationForm()
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &rhs) : Form(rhs)
 {
 	std::cerr << "(ShrubberyCreationForm copy constructor called)" << std::endl;
-}
-
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
-{
-	(void)target;
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &rhs)

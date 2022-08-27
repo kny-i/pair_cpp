@@ -1,12 +1,21 @@
 #include "Form.hpp"
 
-Form::Form(): kName_("Default Form"), isSigned_(false), kGradeForSign_(50), kGradeForExcute_(50)
+Form::Form()
+: kName_("Default Form"),
+isSigned_(false),
+kGradeForSign_(50),
+kGradeForExcute_(50),
+target_("Default Form target")
 {
 	std::cerr << "(Form default constructor called)" << std::endl;
 }
 
-Form::Form(const std::string &formName, const size_t gradeForSign, const size_t gradeForExcute)
-: kName_(formName), isSigned_(false), kGradeForSign_(gradeForSign), kGradeForExcute_(gradeForExcute)
+Form::Form(const std::string &formName, const size_t gradeForSign, const size_t gradeForExcute, std::string target)
+: kName_(formName),
+isSigned_(false),
+kGradeForSign_(gradeForSign),
+kGradeForExcute_(gradeForExcute),
+target_(target)
 {
 	std::cerr << "(Form constructor called)" << std::endl;
 }
@@ -32,33 +41,6 @@ Form &Form::operator=(const Form &rhs)
 	}
 	return *this;
 }
-
-
-const std::string &Form::getKName() const
-{
-	return kName_;
-}
-
-bool Form::isSigned() const
-{
-	return isSigned_;
-}
-
-void Form::setIsSigned(bool isSigned)
-{
-	isSigned_ = isSigned;
-}
-
-size_t Form::getKGradeForSign() const
-{
-	return kGradeForSign_;
-}
-
-size_t Form::getKGradeForExcute() const
-{
-	return kGradeForExcute_;
-}
-
 void Form::beSigned(const Bureaucrat &signer)
 {
 	if (signer.getGrade() > this->getKGradeForSign()) {
@@ -107,3 +89,39 @@ void Form::checkException(const Bureaucrat &excutor) const
 		throw GradeTooLowException();
 	}
 }
+
+/* accessors */
+const std::string &Form::getKName() const
+{
+	return kName_;
+}
+
+bool Form::isSigned() const
+{
+	return isSigned_;
+}
+
+void Form::setIsSigned(bool isSigned)
+{
+	isSigned_ = isSigned;
+}
+
+size_t Form::getKGradeForSign() const
+{
+	return kGradeForSign_;
+}
+
+size_t Form::getKGradeForExcute() const
+{
+	return kGradeForExcute_;
+}
+
+void Form::setTarget(std::string target)
+{
+	target_ = target;
+}
+
+//std::string &Form::getTarget() const
+//{
+//	return target_;
+//}
