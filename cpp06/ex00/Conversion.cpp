@@ -3,3 +3,9 @@
 //
 
 #include "Conversion.hpp"
+
+Convert::Convert() {}
+
+Convert::~Convert() {}
+
+

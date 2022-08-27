@@ -1,4 +1,4 @@
-NAME = converion
+NAME = convert
 
 srcs = $(wildcard ./*.cpp)
 objs = $(srcs:.cpp=.o)
