@@ -13,7 +13,6 @@ $(NAME): $(objs)
 
 clean:
 	$(RM) ./$(objs)
-	$(RM) ./ex00/$(objs)
 
 fclean: clean
 	$(RM) $(NAME)
