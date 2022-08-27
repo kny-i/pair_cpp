@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form(): kName_("Form"), isSigned_(false), kGradeForSign_(50), kGradeForExcute_(50)
+Form::Form(): kName_("DefaultForm"), isSigned_(false), kGradeForSign_(50), kGradeForExcute_(50)
 {
 	std::cerr << "(Form constructor called)" << std::endl;
 }
@@ -60,8 +60,8 @@ void Form::beSigned(const Bureaucrat &signer)
 	} else if (this->isSigned() == true) {
 		std::cout << "Form is already signed" << std::endl;
 	} else {
-		this->setIsSigned(true);
 		std::cout << "Form is signed by " << signer.getName() << std::endl;
+		this->setIsSigned(true);
 	}
 }
 
