@@ -98,7 +98,7 @@ const char *Form::UnsignedException::what() const throw()
 	return "FORM IS UNSIGNED!!";
 }
 
-void Form::excute(const Bureaucrat &excutor) const
+void Form::checkException(const Bureaucrat &excutor) const
 {
 	if (this->isSigned() == false) {
 		throw Form::UnsignedException();
@@ -106,5 +106,4 @@ void Form::excute(const Bureaucrat &excutor) const
 	if (this->getKGradeForExcute() < excutor.getGrade()) {
 		throw GradeTooLowException();
 	}
-	formAction();
 }

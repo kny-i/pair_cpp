@@ -16,7 +16,7 @@ public:
 	PresidentialPardonForm &operator=(const PresidentialPardonForm &rhs);
 	~PresidentialPardonForm(void);
 
-	void	execute(const Bureaucrat &b);
+	virtual void excute(const Bureaucrat &excutor) const;
 };
 
 #endif //CPP_PRESIDENTIALPARDONFORM_HPP

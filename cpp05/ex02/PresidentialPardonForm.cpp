@@ -24,9 +24,8 @@ PresidentialPardonForm::~PresidentialPardonForm(void)
 	std::cerr << "PresidentialPardonForm destructor called" << std::endl;
 }
 
-/* Member funcs */
-//void	PresidentialPardonForm::execute(const Bureaucrat& b)
-//{
-//	this->throwExecuteException(b);
-//	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox" << std::endl;
-//}
+void PresidentialPardonForm::excute(const Bureaucrat &excutor) const
+{
+	checkException(excutor);
+	std::cout << "I want to target" << std::endl;
+}
