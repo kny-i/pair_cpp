@@ -17,6 +17,16 @@ int main()
 	} catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
+	try {
+		Intern someRandomIntern;
+		Bureaucrat bureaucrat("test", 4);
+		Form* rrf;
+
+		rrf = someRandomIntern.makeForm("robotomy_reques", "Bender");
+		rrf->execute(bureaucrat);
+	} catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+	}
 	{
 		std::cout << RED << "_______[PresidentialPardonForm<SUCCESS CASE>]_______"  << STOP << std::endl;
 		try {
