@@ -72,7 +72,7 @@ std::ostream& operator<<(std::ostream &os, const Form &form)
 	os << "form grade for sign : " << form.getKGradeForSign() << std::endl;
 	os << "form grade for excute : " << form.getKGradeForExcute() << std::endl;
 	os << "signed status : " << form.isSigned() << std::endl;
-	std::cout << "_____________________________" << std::endl;
+	std::cout << "_______________________________" << std::endl;
 	return os;
 }
 
