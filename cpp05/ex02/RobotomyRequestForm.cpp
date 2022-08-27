@@ -3,9 +3,10 @@
 
 
 /* Caronical */
-RobotomyRequestForm::RobotomyRequestForm() : Form()
+RobotomyRequestForm::RobotomyRequestForm()
+: Form("Default RobotomyRequestForm", 72, 45)
 {
-	std::cerr << "(RobotmyRequestForm default constructor called)" << std::endl;
+	std::cerr << "(Default RobotmyRequestForm default constructor called)" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form()

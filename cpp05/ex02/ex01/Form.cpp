@@ -1,6 +1,12 @@
 #include "Form.hpp"
 
-Form::Form(): kName_("DefaultForm"), isSigned_(false), kGradeForSign_(50), kGradeForExcute_(50)
+Form::Form(): kName_("Default Form"), isSigned_(false), kGradeForSign_(50), kGradeForExcute_(50)
+{
+	std::cerr << "(Form default constructor called)" << std::endl;
+}
+
+Form::Form(const std::string &formName, const size_t gradeForSign, const size_t gradeForExcute)
+: kName_(formName), isSigned_(false), kGradeForSign_(gradeForSign), kGradeForExcute_(gradeForExcute)
 {
 	std::cerr << "(Form constructor called)" << std::endl;
 }

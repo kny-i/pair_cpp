@@ -1,13 +1,10 @@
-
-
 #include "PresidentialPardonForm.hpp"
 
-/* Caronical */
-PresidentialPardonForm::PresidentialPardonForm() : Form()
+PresidentialPardonForm::PresidentialPardonForm()
+: Form("Default PresidentialPardonForm", 25, 5)
 {
 	std::cerr << "(PresidentialPardonForm constructor called)" << std::endl;
 }
-
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &rhs) : Form(rhs)
 {

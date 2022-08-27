@@ -1,6 +1,7 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : Form()
+ShrubberyCreationForm::ShrubberyCreationForm()
+: Form("Default ShrubberyCreationForm", 145, 137)
 {
 	std::cerr << "(ShrubberyCreationForm default constructor called)" << std::endl;
 }
