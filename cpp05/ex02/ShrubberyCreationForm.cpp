@@ -36,7 +36,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	std::cerr << "(ShrubberyCreationForm destructor called)" << std::endl;
 }
 
-void ShrubberyCreationForm::execute(const Bureaucrat &executor)
+void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 {
 	checkException(executor);
 	std::string file(this->getTarget() + "_shrubbery");

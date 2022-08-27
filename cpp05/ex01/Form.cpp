@@ -1,11 +1,11 @@
 #include "Form.hpp"
 
-Form::Form(): kName_("DefaultForm"), isSigned_(false), kGradeForSign_(50), kGradeForExcute_(50)
+Form::Form(): kName_("DefaultForm"), isSigned_(false), kGradeForSign_(50), kGradeForExecute_(50)
 {
 	std::cerr << "(Form constructor called)" << std::endl;
 }
 
-Form::Form(const Form &rhs) : kName_(rhs.kName_), isSigned_(false), kGradeForSign_(rhs.getKGradeForSign()), kGradeForExcute_(rhs.getKGradeForExcute())
+Form::Form(const Form &rhs) : kName_(rhs.kName_), isSigned_(false), kGradeForSign_(rhs.getKGradeForSign()), kGradeForExecute_(rhs.getKGradeForExcute())
 {
 	std::cerr << "(Form copy constructor called)" << std::endl;
 }
@@ -21,7 +21,7 @@ Form &Form::operator=(const Form &rhs)
 	if (this != &rhs) {
 		this->isSigned_ = rhs.isSigned();
 		const_cast<std::string&>(this->kName_) = rhs.getKName();
-		const_cast<size_t &>(this->kGradeForExcute_) = rhs.getKGradeForExcute();
+		const_cast<size_t &>(this->kGradeForExecute_) = rhs.getKGradeForExcute();
 		const_cast<size_t &>(this->kGradeForSign_) = rhs.getKGradeForSign();
 	}
 	return *this;
@@ -50,7 +50,7 @@ size_t Form::getKGradeForSign() const
 
 size_t Form::getKGradeForExcute() const
 {
-	return kGradeForExcute_;
+	return kGradeForExecute_;
 }
 
 void Form::beSigned(const Bureaucrat &signer)
@@ -70,7 +70,7 @@ std::ostream& operator<<(std::ostream &os, const Form &form)
 	std::cout << "__________[Form info]__________" << std::endl;
 	os << "name : " <<  form.getKName() << std::endl;
 	os << "form grade for sign : " << form.getKGradeForSign() << std::endl;
-	os << "form grade for excute : " << form.getKGradeForExcute() << std::endl;
+	os << "form grade for execute : " << form.getKGradeForExcute() << std::endl;
 	os << "signed status : " << form.isSigned() << std::endl;
 	std::cout << "_______________________________" << std::endl;
 	return os;

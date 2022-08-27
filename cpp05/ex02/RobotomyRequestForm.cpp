@@ -37,7 +37,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 }
 
 /* Member funcs */
-void RobotomyRequestForm::execute(const Bureaucrat &executor)
+void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 {
 	checkException(executor);
 	std::cout << "[DRILLING NOISES]\\\\ Bzzzzzzzzzzzzzz //" << std::endl;

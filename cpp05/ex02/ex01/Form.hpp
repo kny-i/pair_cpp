@@ -37,8 +37,8 @@ public:
 	size_t getKGradeForExcute() const;
 
 	/* new! */
-	virtual void excute(const Bureaucrat &excutor) const = 0;
-	void checkException(const Bureaucrat &excutor) const;
+	virtual void execute(const Bureaucrat &executor) const = 0;
+	void checkException(const Bureaucrat &executor) const;
 
 	void setTarget(std::string target);
 	const std::string  &getTarget() const;
@@ -47,7 +47,7 @@ private:
 	const std::string kName_;
 	bool isSigned_;
 	const size_t kGradeForSign_;
-	const size_t kGradeForExcute_;
+	const size_t kGradeForExecute_;
 
 protected:
 	std::string target_;

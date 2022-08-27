@@ -16,7 +16,7 @@ public:
 	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &rhs);
 	~ShrubberyCreationForm();
 
-	virtual void execute(const Bureaucrat &executor);
+	void execute(const Bureaucrat &executor) const;
 
 	class ShrubberyFileException : public std::exception{};
 };

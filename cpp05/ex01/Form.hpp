@@ -34,7 +34,7 @@ private:
 	const std::string kName_;
 	bool isSigned_;
 	const size_t kGradeForSign_;
-	const size_t kGradeForExcute_;
+	const size_t kGradeForExecute_;
 };
 
 std::ostream& operator<<(std::ostream &os, const Form &form);
