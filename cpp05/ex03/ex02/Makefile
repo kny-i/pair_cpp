@@ -1,9 +1,8 @@
 NAME = bureaucrat
 
 srcs = $(wildcard ./*.cpp) \
-		$(wildcard ./ex02/ex01/ex00/*.cpp) \
-		$(wildcard ./ex02/ex01/*.cpp) \
-		$(wildcard ./ex02/*.cpp)
+		$(wildcard ./ex01/*.cpp) \
+		$(wildcard ./ex01/ex00/*.cpp)
 
 objs = $(srcs:.cpp=.o)
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address -pedantic
@@ -16,10 +15,10 @@ $(NAME): $(objs)
 
 clean:
 	$(RM) ./$(objs)
-	$(RM) ./ex00/$(objs)
 
 fclean: clean
 	$(RM) $(NAME)
+
 re: fclean all
 
 run: all
