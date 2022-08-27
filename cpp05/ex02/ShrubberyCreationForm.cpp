@@ -44,7 +44,25 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const
 	if (ofs.fail()) {
 		throw "open filestream error";
 	} else {
-		ofs << "↑";//ascii tree...
+		ofs << ".\n"
+			   "├── Default ShrubberyCreationForm target_shrubbery\n"
+			   "├── Makefile\n"
+			   "├── PresidentialPardonForm.cpp\n"
+			   "├── PresidentialPardonForm.hpp\n"
+			   "├── RobotomyRequestForm.cpp\n"
+			   "├── RobotomyRequestForm.hpp\n"
+			   "├── ShrubberyCreationForm.cpp\n"
+			   "├── ShrubberyCreationForm.hpp\n"
+			   "├── ex01\n"
+			   "├── Form.cpp\n"
+			   "│── Form.hpp\n"
+			   "│── Makefile\n"
+			   "└── ex00\n"
+			   "├── Bureaucrat.cpp\n"
+			   "├── Bureaucrat.hpp\n"
+			   "└── Makefile\n"
+			   "└── main.cpp\n"
+			   << std::endl;
 	}
 }
 
