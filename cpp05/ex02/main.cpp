@@ -7,15 +7,15 @@
 int main()
 {
 	{
-		std::cout << "_______[PresidentialPardonForm<SUCCESS CASE>]_______" << std::endl;
+		std::cout << RED << "_______[PresidentialPardonForm<SUCCESS CASE>]_______"  << STOP << std::endl;
 		try {
 			Bureaucrat bureaucrat("NOP", 1);
 			PresidentialPardonForm form;
 			std::cout << form << std::endl;
 			std::cout << bureaucrat << std::endl;
 
-			form.beSigned(bureaucrat);
-			form.execute(bureaucrat);
+			bureaucrat.signForm(form);
+			bureaucrat.executeForm(form);
 
 		} catch (std::exception &e) {
 			std::cerr << e.what() << std::endl;
@@ -23,46 +23,45 @@ int main()
 	}
 
 	{
-		std::cout << "_______[PresidentialPardonForm<FAILURE CASE>]_______" << std::endl;
+		std::cout << RED << "_______[PresidentialPardonForm<FAILURE CASE>]_______" << STOP << std::endl;
 		try {
 			Bureaucrat bureaucrat("NOP", 30);
 			PresidentialPardonForm form;
 			std::cout << form << std::endl;
 			std::cout << bureaucrat << std::endl;
 
-			form.beSigned(bureaucrat);
-			form.execute(bureaucrat);
-
+			bureaucrat.signForm(form);
+			bureaucrat.executeForm(form);
 		} catch (std::exception &e) {
 			std::cerr << e.what() << std::endl;
 		}
 	}
 
 	{
-		std::cout << "_______[RobotomyRequestForm<SUCCESS CASE>]_______" << std::endl;
+		std::cout << BLUE<< "_______[RobotomyRequestForm<SUCCESS CASE>]_______"<< STOP << std::endl;
 		try {
 			Bureaucrat bureaucrat("NOP", 1);
 			RobotomyRequestForm form;
 			std::cout << form << std::endl;
 			std::cout << bureaucrat << std::endl;
 
-			form.beSigned(bureaucrat);
-			form.execute(bureaucrat);
+			bureaucrat.signForm(form);
+			bureaucrat.executeForm(form);
 
 		} catch (std::exception &e) {
 			std::cerr << e.what() << std::endl;
 		}
 	}
 	{
-		std::cout << "_______[RobotomyRequestForm<FAILURE CASE>]_______" << std::endl;
+		std::cout<< BLUE << "_______[RobotomyRequestForm<FAILURE CASE>]_______" << STOP<<std::endl;
 		try {
 			Bureaucrat bureaucrat("NOP", 80);
 			RobotomyRequestForm form;
 			std::cout << form << std::endl;
 			std::cout << bureaucrat << std::endl;
 
-			form.beSigned(bureaucrat);
-			form.execute(bureaucrat);
+			bureaucrat.signForm(form);
+			bureaucrat.executeForm(form);
 
 		} catch (std::exception &e) {
 			std::cerr << e.what() << std::endl;
@@ -70,15 +69,15 @@ int main()
 	}
 
 	{
-		std::cout << "_______[ShrubberyCreationForm<SUCCESS CASE>]_______" << std::endl;
+		std::cout << CYAN << "_______[ShrubberyCreationForm<SUCCESS CASE>]_______"<< STOP << std::endl;
 		try {
 			Bureaucrat bureaucrat("NOP", 1);
 			ShrubberyCreationForm form;
 			std::cout << form << std::endl;
 			std::cout << bureaucrat << std::endl;
 
-			form.beSigned(bureaucrat);
-			form.execute(bureaucrat);
+			bureaucrat.signForm(form);
+			bureaucrat.executeForm(form);
 
 		} catch (std::exception &e) {
 			std::cerr << e.what() << std::endl;
@@ -86,15 +85,15 @@ int main()
 	}
 
 	{
-		std::cout << "_______[ShrubberyCreationForm<FAILURE CASE>]_______" << std::endl;
+		std::cout << CYAN<< "_______[ShrubberyCreationForm<FAILURE CASE>]_______" << STOP<<  std::endl;
 		try {
-			Bureaucrat bureaucrat("NOP", 100);
+			Bureaucrat bureaucrat("NOP", 300);
 			ShrubberyCreationForm form;
 			std::cout << form << std::endl;
 			std::cout << bureaucrat << std::endl;
 
-			form.beSigned(bureaucrat);
-			form.execute(bureaucrat);
+			bureaucrat.signForm(form);
+			bureaucrat.executeForm(form);
 
 		} catch (std::exception &e) {
 			std::cerr << e.what() << std::endl;
