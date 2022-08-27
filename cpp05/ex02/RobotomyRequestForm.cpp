@@ -40,7 +40,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 void RobotomyRequestForm::execute(const Bureaucrat &executor)
 {
 	checkException(executor);
-	std::cout << "\\\\ Bzzzzzzzzzzzzzz //" << std::endl;
+	std::cout << "[DRILLING NOISES]\\\\ Bzzzzzzzzzzzzzz //" << std::endl;
 	std::srand(time(NULL));
 	if (std::rand() % 2 == 0) {
 		std::cout  << this->getTarget() << " has been robotomized successfully" << std::endl;

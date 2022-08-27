@@ -31,13 +31,13 @@ PresidentialPardonForm&	PresidentialPardonForm::operator=(const PresidentialPard
 	return *this;
 }
 
-PresidentialPardonForm::~PresidentialPardonForm(void)
+PresidentialPardonForm::~PresidentialPardonForm()
 {
 	std::cerr << "PresidentialPardonForm destructor called" << std::endl;
 }
 
-void PresidentialPardonForm::excute(const Bureaucrat &excutor) const
+void PresidentialPardonForm::execute(const Bureaucrat &executor) const
 {
-	checkException(excutor);
+	checkException(executor);
 	std::cout << this->target_ << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

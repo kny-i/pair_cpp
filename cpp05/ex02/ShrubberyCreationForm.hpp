@@ -2,6 +2,8 @@
 #define CPP_SHRUBBERYCREATIONFORM_HPP
 
 #include <iostream>
+#include <fstream>
+
 #include "./ex01/ex00/Bureaucrat.hpp"
 #include "./ex01/Form.hpp"
 
@@ -14,7 +16,7 @@ public:
 	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &rhs);
 	~ShrubberyCreationForm();
 
-	void	execute(const Bureaucrat &b);
+	virtual void execute(const Bureaucrat &executor);
 
 	class ShrubberyFileException : public std::exception{};
 };

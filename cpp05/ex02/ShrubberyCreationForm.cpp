@@ -36,3 +36,15 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	std::cerr << "(ShrubberyCreationForm destructor called)" << std::endl;
 }
 
+void ShrubberyCreationForm::execute(const Bureaucrat &executor)
+{
+	checkException(executor);
+	std::string file(this->getTarget() + "_shrubbery");
+	std::ofstream ofs(file);
+	if (ofs.fail()) {
+		throw "open filestream error";
+	} else {
+		ofs << "↑";//ascii tree...
+	}
+}
+
