@@ -1,18 +1,18 @@
 #include "Form.hpp"
 
-Form::Form(): kName_("default"), isSigned_(false), kGradeForSign_(50), kGradeForExcute_(50)
+Form::Form(): kName_("DefaultForm"), isSigned_(false), kGradeForSign_(50), kGradeForExcute_(50)
 {
 	std::cerr << "(Form constructor called)" << std::endl;
 }
 
 Form::Form(const Form &rhs) : kName_(rhs.kName_), isSigned_(false), kGradeForSign_(rhs.getKGradeForSign()), kGradeForExcute_(rhs.getKGradeForExcute())
 {
-	std::cerr << "(Form Copy constructor called)" << std::endl;
+	std::cerr << "(Form copy constructor called)" << std::endl;
 }
 
 Form::~Form()
 {
-	std::cerr << "(Form Deconstructor called)" << std::endl;
+	std::cerr << "(Form destructor called)" << std::endl;
 }
 
 Form &Form::operator=(const Form &rhs)
@@ -60,19 +60,29 @@ void Form::beSigned(const Bureaucrat &signer)
 	} else if (this->isSigned() == true) {
 		std::cout << "Form is already signed" << std::endl;
 	} else {
-		this->setIsSigned(true);
 		std::cout << "Form is signed by " << signer.getName() << std::endl;
+		this->setIsSigned(true);
 	}
 }
 
 std::ostream& operator<<(std::ostream &os, const Form &form)
 {
-	std::cout << "----------Form info ----------" << std::endl;
+	std::cout << "__________[Form info]__________" << std::endl;
 	os << "name : " <<  form.getKName() << std::endl;
 	os << "form grade for sign : " << form.getKGradeForSign() << std::endl;
 	os << "form grade for excute : " << form.getKGradeForExcute() << std::endl;
 	os << "signed status : " << form.isSigned() << std::endl;
-	std::cout << "-------------------------------" << std::endl;
+	std::cout << "_______________________________" << std::endl;
 	return os;
 }
 
+const char *Form::GradeTooHighException::what() const throw()
+{
+	return "GRADE IS TOO HIGH!!";
+}
+
+
+const char *Form::GradeTooLowException::what() const throw()
+{
+	return "GRADE IS TOOLOW!!";
+}

@@ -1,5 +1,3 @@
-
-
 #ifndef CPP_FORM_HPP
 #define CPP_FORM_HPP
 
@@ -7,10 +5,17 @@
 #include <string>
 #include "./ex00/Bureaucrat.hpp"
 
+class Bureaucrat;
 class Form {
 public:
-	class GradeTooHighException : public std::exception {};
-	class GradeTooLowException : public std::exception {};
+	class GradeTooHighException : public std::exception {
+	public:
+		virtual const char *what() const throw();
+	};
+	class GradeTooLowException : public std::exception {
+	public:
+		virtual const char *what() const throw();
+	};
 
 public:
 	Form();

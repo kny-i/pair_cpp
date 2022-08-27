@@ -80,3 +80,30 @@ std::ostream& operator<<(std::ostream &os, const Bureaucrat &bureaucrat)
 	os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
 	return os;
 }
+
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "GRADE IS TOO HIGH!!";
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "GRADE IS TOO LOW!!";
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+	try {
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getKName() << std::endl;
+	} catch (std::exception &e) {
+		std::cerr
+		<< this->getName()
+		<< " couldn’t sign "
+		<< form.getKName()
+		<<  "because ["
+		<< e.what()
+		<< "]." << std::endl;
+	}
+}
+
