@@ -41,13 +41,15 @@ public:
 	void checkException(const Bureaucrat &excutor) const;
 
 	void setTarget(std::string target);
-//	std::string &getTarget() const;
+	const std::string  &getTarget() const;
 
 private:
 	const std::string kName_;
 	bool isSigned_;
 	const size_t kGradeForSign_;
 	const size_t kGradeForExcute_;
+
+protected:
 	std::string target_;
 };
 

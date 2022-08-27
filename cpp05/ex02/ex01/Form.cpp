@@ -121,7 +121,7 @@ void Form::setTarget(std::string target)
 	target_ = target;
 }
 
-//std::string &Form::getTarget() const
-//{
-//	return target_;
-//}
+const std::string  &Form::getTarget() const
+{
+	return target_;
+}

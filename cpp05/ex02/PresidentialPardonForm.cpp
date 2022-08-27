@@ -39,5 +39,5 @@ PresidentialPardonForm::~PresidentialPardonForm(void)
 void PresidentialPardonForm::excute(const Bureaucrat &excutor) const
 {
 	checkException(excutor);
-	std::cout << "I want to target" << std::endl;
+	std::cout << this->target_ << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

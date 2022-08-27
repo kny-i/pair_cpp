@@ -37,15 +37,13 @@ RobotomyRequestForm::~RobotomyRequestForm()
 }
 
 /* Member funcs */
-void RobotomyRequestForm::execute(const Bureaucrat &target)
+void RobotomyRequestForm::execute(const Bureaucrat &executor)
 {
-	(void)target;
-//	this->throwExecuteException(b);
+	checkException(executor);
 	std::cout << "\\\\ Bzzzzzzzzzzzzzz //" << std::endl;
 	std::srand(time(NULL));
 	if (std::rand() % 2 == 0) {
-		std::cout << "A" << std::endl;
-//		std::cout << this->getTarget() << " has been robotomized successfully" << std::endl;
+		std::cout  << this->getTarget() << " has been robotomized successfully" << std::endl;
 	} else {
 		std::cout << "Sorry, robotomy failed..." << std::endl;
 	}
