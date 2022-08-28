@@ -9,7 +9,7 @@
 
 class Convert {
 public:
-	Convert(std::string input);
+	Convert(std::string value);
 	Convert(const Convert &rhs);
 	Convert &operator=(const Convert &rhs);
 	~Convert();

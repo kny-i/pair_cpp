@@ -4,8 +4,19 @@
 
 #include "Conversion.hpp"
 /* canonical form */
-Convert::Convert(std::string input) : value_(input) {}
+Convert::Convert(std::string value) : value_(value) {}
 
+Convert::Convert(const Convert &rhs)
+{
+	*this = rhs;
+}
+
+Convert &Convert::operator=(const Convert &rhs) {
+	if (this != &rhs) {
+		this->value_ = rhs.value_;
+	}
+	return *this;
+}
 
 Convert::~Convert() {}
 
