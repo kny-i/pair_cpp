@@ -64,3 +64,4 @@ const char *Intern::formException::what() const throw()
 {
 	return "FORM EXCEPTION!!";
 }
+
