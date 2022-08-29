@@ -25,6 +25,7 @@ public:
 	double getDoubleType() const;
 	void setDoubleType(double doubleType);
 
+	int	parseInput();
 private:
 	std::string value_;
 	int type_;

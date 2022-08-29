@@ -1,5 +1,57 @@
-
 #include "Conversion.hpp"
+
+#define NAN_INF 1
+#define ERROR 2
+#define CHAR 3
+#define INT 4
+#define FLOAT 5
+#define DOUBLE 6
+
+int Convert::parseInput()
+{
+	if (this->getValue().compare("nan") == 0 || this->getValue().compare("+inf") == 0 ||
+		this->getValue().compare("-inf") == 0 || this->getValue().compare("+inff") == 0 ||
+		this->getValue().compare("-inff") == 0)
+	{
+		return (NAN_INF);
+	}
+	else if (this->getValue().length() == 1 &&
+			 (this->getValue()[0] == '+' || this->getValue()[0] == '-' || // prevents that the input of single digit integers get interpreted as a char
+			  this->getValue()[0] == 'f' || this->getValue()[0] == '.'))
+	{
+		return (CHAR);
+	}
+	else if (this->getValue().find_first_not_of("+-0123456789") == std::string::npos)//指定された文字列中のいずれの文字にも一致しない最初の場所を検索する。
+		return (INT);
+	else if (this->getValue().find_first_not_of("+-0123456789.") == std::string::npos)//指定された文字列中のいずれの文字にも一致しない最初の場所を検索する。
+	{
+		if (this->getValue().find_first_of(".") != this->getValue().find_last_of(".") || // catches `0..0`
+			isdigit(this->getValue()[this->getValue().find_first_of(".") + 1]) == false || // catches `0.`
+			this->getValue().find_first_of(".") == 0) // catches `.0`
+			return (ERROR);
+		else
+			return (DOUBLE);
+	}
+	else if (this->getValue().find_first_not_of("+-0123456789.f") == std::string::npos)
+	{
+		if (this->getValue().find_first_of("f") != this->getValue().find_last_of("f") || // catches `0.0ff`
+			this->getValue().find_first_of(".") != this->getValue().find_last_of(".") || // catches `0..0f`
+			this->getValue().find_first_of("f") - this->getValue().find_first_of(".") == 1 || //catches `0.f`
+			this->getValue().find_first_of(".") == 0 || // catches `.0f`
+			this->getValue()[this->getValue().find_first_of("f") + 1] != '\0') // catches `0.0f0`
+			return (ERROR);
+		else
+			return (FLOAT);
+	}
+	else if ((this->getValue().length() == 1 && std::isprint(this->getValue()[0])) ||
+			 (this->getValue().length() == 1 && std::isalpha(this->getValue()[0])))
+	{
+		return (CHAR);
+	}
+	else
+		return (ERROR);
+}
+
 /* canonical form */
 Convert::Convert(std::string value) : value_(value) {}
 
