@@ -26,6 +26,10 @@ public:
 	void setDoubleType(double doubleType);
 
 	int	parseInput();
+	void fromChar(void);
+	void fromInt(void);
+	void fromFloat(void);
+	void fromDouble(void);
 private:
 	std::string value_;
 	int type_;

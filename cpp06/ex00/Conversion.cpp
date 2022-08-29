@@ -52,6 +52,32 @@ int Convert::parseInput()
 		return (ERROR);
 }
 
+void Convert::fromChar(void)
+{
+	this->charType_ = static_cast<unsigned char>(this->getValue()[0]);
+	this->intType_ = static_cast<int>(this->getCharType());
+	this->floatType_ = static_cast<float>(this->getCharType());
+	this->doubleType_ = static_cast<double>(this->getCharType());
+}
+void Convert::fromInt(void)
+{
+	this->intType_ = static_cast<int>(this->getDoubleType());
+	this->charType_ = static_cast<unsigned char>(this->getIntType());
+	this->floatType_ = static_cast<float>(this->getDoubleType());
+}
+void Convert::fromFloat(void)
+{
+	this->floatType_ = static_cast<float>(this->getDoubleType());
+	this->charType_ = static_cast<char>(this->getFloatType());
+	this->intType_ = static_cast<int>(this->getFloatType());
+}
+void Convert::fromDouble(void)
+{
+	this->charType_ = static_cast<char>(this->getDoubleType());
+	this->intType_ = static_cast<int>(this->getDoubleType());
+	this->floatType_ = static_cast<float>(this->getDoubleType());
+}
+
 /* canonical form */
 Convert::Convert(std::string value) : value_(value) {}
 
