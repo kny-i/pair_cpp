@@ -103,8 +103,69 @@ void	Convert::convertInput(void)
 const char *Convert::ErrorException::what() const throw()
 {
 	return ("Error: Impossible to print or input not convertable");
-};
+}
 
+void	Convert::printValues(void)const
+{
+	// display char
+	if (this->getType() != NAN_INF)
+	{
+		if (isprint(this->getCharType()))
+			std::cout << "char: '" << this->getCharType() << "'" << std::endl;
+		else
+			std::cout << "char: Non displayable" << std::endl;
+	}
+	else
+		std::cout << "char: impossible" << std::endl;
+
+	// display int
+	if (this->getType() != NAN_INF )
+	{
+		std::cout << "int: " << this->getIntType() << std::endl;
+	}
+	else
+		std::cout << "int: impossible" << std::endl;
+
+	// display float
+	if (this->getType() != NAN_INF)
+	{
+		std::cout << "float: " << this->getFloatType();
+		if (this->getFloatType() - this->getIntType() == 0)
+			std::cout << ".0f" << std::endl;
+		else
+			std::cout << "f" << std::endl;
+	}
+	else
+	{
+		if (this->getValue() == "nan" || this->getValue() == "nanf")
+			std::cout << "float: nanf" << std::endl;
+		else if (this->getValue()[0] == '+')
+			std::cout << "float: +inff" << std::endl;
+		else
+			std::cout << "float: -inff" << std::endl;
+	}
+
+	// display double
+	if (this->getType() != NAN_INF)
+	{
+		std::cout << "double: " << this->getDoubleType();
+		if (this->getDoubleType() - this->getIntType() == 0)
+		{
+			std::cout << ".0" << std::endl;
+		}
+		else
+			std::cout << std::endl;
+	}
+	else
+	{
+		if (this->getValue() == "nan" || this->getValue() == "nanf")
+			std::cout << "double: nan" << std::endl;
+		else if (this->getValue()[0] == '+')
+			std::cout << "double: +inf" << std::endl;
+		else
+			std::cout << "double: -inf" << std::endl;
+	}
+}
 /* canonical form */
 Convert::Convert(std::string value) : value_(value) {}
 

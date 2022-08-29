@@ -31,6 +31,7 @@ public:
 	void fromFloat(void);
 	void fromDouble(void);
 	void convertInput(void);
+	void printValues(void)const;
 
 	class ErrorException : public std::exception
 	{
