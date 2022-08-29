@@ -78,6 +78,33 @@ void Convert::fromDouble(void)
 	this->floatType_ = static_cast<float>(this->getDoubleType());
 }
 
+void	Convert::convertInput(void)
+{
+	void (Convert::*functionPTRS[])(void) = {&Convert::fromChar, &Convert::fromInt, &Convert::fromFloat, &Convert::fromDouble};
+	int types[] = {CHAR, INT, FLOAT, DOUBLE};
+
+	this->type_ = Convert::parseInput();
+
+	if (this->getType() == NAN_INF)
+		return ;
+	int i;
+	for (i = 0; i < 4; i++)
+	{
+		if (this->getType() == types[i])
+		{
+			(this->*functionPTRS[i])();
+			break ;
+		}
+	}
+	if (i == 4)
+		throw Convert::ErrorException();
+}
+
+const char *Convert::ErrorException::what() const throw()
+{
+	return ("Error: Impossible to print or input not convertable");
+};
+
 /* canonical form */
 Convert::Convert(std::string value) : value_(value) {}
 

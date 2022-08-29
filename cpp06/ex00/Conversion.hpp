@@ -30,6 +30,14 @@ public:
 	void fromInt(void);
 	void fromFloat(void);
 	void fromDouble(void);
+	void convertInput(void);
+
+	class ErrorException : public std::exception
+	{
+	public:
+		virtual const char *what() const throw();
+	};
+
 private:
 	std::string value_;
 	int type_;
