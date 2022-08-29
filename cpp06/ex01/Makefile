@@ -1,5 +1,4 @@
 NAME = serialization
-
 srcs = $(wildcard ./*.cpp)
 objs = $(srcs:.cpp=.o)
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address -pedantic
