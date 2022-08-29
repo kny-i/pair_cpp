@@ -211,6 +211,7 @@ int Convert::getIntType() const {
 	return intType_;
 }
 
+
 void Convert::setIntType(int intType) {
 	intType_ = intType;
 }
