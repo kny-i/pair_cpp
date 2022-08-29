@@ -2,10 +2,16 @@
 
 int main(int argc, char **argv)
 {
-	if (argc == 2) {
-		Convert convert(argv[1]);
-		convert.printValues();
-	} else {
-		std::cerr << "Invalid Argument count!" << std::endl;
+	try{
+
+		if (argc == 2) {
+			Convert convert(argv[1]);
+		} else {
+			std::cerr << "Invalid Argument count!" << std::endl;
+		}
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
 	}
 }

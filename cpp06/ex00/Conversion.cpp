@@ -166,8 +166,15 @@ void	Convert::printValues(void)const
 			std::cout << "double: -inf" << std::endl;
 	}
 }
+
 /* canonical form */
-Convert::Convert(std::string value) : value_(value) {}
+Convert::Convert(std::string value) : value_(value)
+{
+	std::cout << "Conversion Constructor for " << this->getValue() << std::endl;
+	this->doubleType_ = std::atof(this->getValue().c_str());
+	this->convertInput();
+	this->printValues();
+}
 
 Convert::Convert(const Convert &rhs)
 {
