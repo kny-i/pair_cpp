@@ -1,12 +1,5 @@
 #include "Conversion.hpp"
 
-#define NAN_INF 1
-#define ERROR 2
-#define CHAR 3
-#define INT 4
-#define FLOAT 5
-#define DOUBLE 6
-
 int Convert::parseInput()
 {
 	if (this->getValue().compare("nan") == 0 || this->getValue().compare("+inf") == 0 ||

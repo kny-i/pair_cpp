@@ -4,6 +4,15 @@
 #include <iostream>
 #include <string>
 
+enum {
+	NAN_INF = 1,
+	ERROR = 2,
+	CHAR = 3,
+	INT = 4,
+	FLOAT = 5,
+	DOUBLE = 6
+};
+
 class Convert {
 public:
 	Convert(std::string value);
