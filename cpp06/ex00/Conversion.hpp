@@ -15,6 +15,15 @@ enum {
 
 class Convert {
 public:
+	int	parseInput();
+	void fromChar();
+	void fromInt();
+	void fromFloat();
+	void fromDouble();
+	void convertInput();
+	void printValues() const;
+
+	/* canonical form */
 	Convert(std::string value);
 	Convert(const Convert &rhs);
 	Convert &operator=(const Convert &rhs);
@@ -34,16 +43,7 @@ public:
 	double getDoubleType() const;
 	void setDoubleType(double doubleType);
 
-	int	parseInput();
-	void fromChar(void);
-	void fromInt(void);
-	void fromFloat(void);
-	void fromDouble(void);
-	void convertInput(void);
-	void printValues(void)const;
-
-	class ErrorException : public std::exception
-	{
+	class ErrorException : public std::exception {
 	public:
 		virtual const char *what() const throw();
 	};
