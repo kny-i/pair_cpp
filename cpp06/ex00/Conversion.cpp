@@ -12,8 +12,7 @@ int Convert::parseInput()
 		return CHAR;
 	} else if (this->getValue().find_first_not_of("+-0123456789") == std::string::npos) {//指定された文字列中のいずれの文字にも一致しない最初の場所を検索する。
 		return INT;
-	}
-	else if (this->getValue().find_first_not_of("+-0123456789.") == std::string::npos) {//指定された文字列中のいずれの文字にも一致しない最初の場所を検索する。
+	} else if (this->getValue().find_first_not_of("+-0123456789.") == std::string::npos) {//指定された文字列中のいずれの文字にも一致しない最初の場所を検索する。
 		if (this->getValue().find_first_of(".") != this->getValue().find_last_of(".") || // catches `0..0`
 			isdigit(this->getValue()[this->getValue().find_first_of(".") + 1]) == false || // catches `0.`
 			this->getValue().find_first_of(".") == 0){ // catches `.0`
@@ -68,7 +67,7 @@ void Convert::fromDouble()
 
 void	Convert::convertInput()
 {
-	void (Convert::*functionPTRS[])(void) = {&Convert::fromChar, &Convert::fromInt, &Convert::fromFloat, &Convert::fromDouble};
+	void (Convert::*functionPTRS[])() = {&Convert::fromChar, &Convert::fromInt, &Convert::fromFloat, &Convert::fromDouble};
 	int types[] = {CHAR, INT, FLOAT, DOUBLE};
 
 	this->type_ = Convert::parseInput();
@@ -203,7 +202,6 @@ void Convert::setCharType(char charType) {
 int Convert::getIntType() const {
 	return intType_;
 }
-
 
 void Convert::setIntType(int intType) {
 	intType_ = intType;

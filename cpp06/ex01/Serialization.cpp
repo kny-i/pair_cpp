@@ -29,10 +29,11 @@ Serializer::~Serializer()
 }
 
 
-Serializer &Serializer::operator=(const Serializer &src)
+Serializer &Serializer::operator=(const Serializer &rhs)
 {
 	std::cout << "Serializer Assignation operator called" << std::endl;
-	if (this == &src)
-		return *this;
+	if (this != &rhs) {
+		(void)rhs;
+	}
 	return *this;
 }
