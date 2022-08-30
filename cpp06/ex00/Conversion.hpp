@@ -22,6 +22,7 @@ public:
 	void fromDouble();
 	void convertInput();
 	void printValues() const;
+	bool isMultipleSigns();
 
 	/* canonical form */
 	Convert(std::string value);
@@ -42,6 +43,7 @@ public:
 	void setFloatType(float floatType);
 	double getDoubleType() const;
 	void setDoubleType(double doubleType);
+
 
 	class ErrorException : public std::exception {
 	public:

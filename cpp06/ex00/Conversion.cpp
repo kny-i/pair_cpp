@@ -1,5 +1,17 @@
 #include "Conversion.hpp"
 
+bool Convert::isMultipleSigns()
+{
+	size_t i = 1; //it's ok to have signs at the word
+	std::string str = getValue();
+	while (str[i]) {
+		if (str[i] == '-' || str[i] == '+') {
+			return true;
+		}
+		i++;
+	}
+	return false;
+}
 int Convert::parseInput()
 {
 	if (this->getValue().compare("nan") == 0 || this->getValue().compare("+inf") == 0 ||
@@ -10,7 +22,9 @@ int Convert::parseInput()
 			 (this->getValue()[0] == '+' || this->getValue()[0] == '-' || // prevents that the input of single digit integers get interpreted as a char
 			  this->getValue()[0] == 'f' || this->getValue()[0] == '.')) {
 		return CHAR;
-	} else if (this->getValue().find_first_not_of("+-0123456789") == std::string::npos) {//指定された文字列中のいずれの文字にも一致しない最初の場所を検索する。
+	} else if (isMultipleSigns() == true) {
+		throw Convert::ErrorException();
+	} else if (this->getValue().find_first_not_of("+-0123456789") == std::string::npos ) {//指定された文字列中のいずれの文字にも一致しない最初の場所を検索する。
 		return INT;
 	} else if (this->getValue().find_first_not_of("+-0123456789.") == std::string::npos) {//指定された文字列中のいずれの文字にも一致しない最初の場所を検索する。
 		if (this->getValue().find_first_of(".") != this->getValue().find_last_of(".") || // catches `0..0`
