@@ -4,45 +4,40 @@ int Convert::parseInput()
 {
 	if (this->getValue().compare("nan") == 0 || this->getValue().compare("+inf") == 0 ||
 		this->getValue().compare("-inf") == 0 || this->getValue().compare("+inff") == 0 ||
-		this->getValue().compare("-inff") == 0)
-	{
+		this->getValue().compare("-inff") == 0) {
 		return NAN_INF;
-	}
-	else if (this->getValue().length() == 1 &&
+	} else if (this->getValue().length() == 1 &&
 			 (this->getValue()[0] == '+' || this->getValue()[0] == '-' || // prevents that the input of single digit integers get interpreted as a char
-			  this->getValue()[0] == 'f' || this->getValue()[0] == '.'))
-	{
+			  this->getValue()[0] == 'f' || this->getValue()[0] == '.')) {
 		return CHAR;
-	}
-	else if (this->getValue().find_first_not_of("+-0123456789") == std::string::npos)//指定された文字列中のいずれの文字にも一致しない最初の場所を検索する。
+	} else if (this->getValue().find_first_not_of("+-0123456789") == std::string::npos) {//指定された文字列中のいずれの文字にも一致しない最初の場所を検索する。
 		return INT;
-	else if (this->getValue().find_first_not_of("+-0123456789.") == std::string::npos)//指定された文字列中のいずれの文字にも一致しない最初の場所を検索する。
-	{
+	}
+	else if (this->getValue().find_first_not_of("+-0123456789.") == std::string::npos) {//指定された文字列中のいずれの文字にも一致しない最初の場所を検索する。
 		if (this->getValue().find_first_of(".") != this->getValue().find_last_of(".") || // catches `0..0`
 			isdigit(this->getValue()[this->getValue().find_first_of(".") + 1]) == false || // catches `0.`
-			this->getValue().find_first_of(".") == 0) // catches `.0`
+			this->getValue().find_first_of(".") == 0){ // catches `.0`
 			return ERROR;
-		else
+		} else {
 			return DOUBLE;
-	}
-	else if (this->getValue().find_first_not_of("+-0123456789.f") == std::string::npos)
-	{
+		}
+	} else if (this->getValue().find_first_not_of("+-0123456789.f") == std::string::npos) {
 		if (this->getValue().find_first_of("f") != this->getValue().find_last_of("f") || // catches `0.0ff`
 			this->getValue().find_first_of(".") != this->getValue().find_last_of(".") || // catches `0..0f`
 			this->getValue().find_first_of("f") - this->getValue().find_first_of(".") == 1 || //catches `0.f`
 			this->getValue().find_first_of(".") == 0 || // catches `.0f`
-			this->getValue()[this->getValue().find_first_of("f") + 1] != '\0') // catches `0.0f0`
+			this->getValue()[this->getValue().find_first_of("f") + 1] != '\0') {// catches `0.0f0`
 			return ERROR;
-		else
+		} else {
 			return FLOAT;
-	}
-	else if ((this->getValue().length() == 1 && std::isprint(this->getValue()[0])) ||
-			 (this->getValue().length() == 1 && std::isalpha(this->getValue()[0])))
-	{
+		}
+	} else if ((this->getValue().length() == 1 && std::isprint(this->getValue()[0])) ||
+			 (this->getValue().length() == 1 && std::isalpha(this->getValue()[0]))) {
 		return CHAR;
 	}
-	else
+	else {
 		return ERROR;
+	}
 }
 
 void Convert::fromChar()
@@ -78,9 +73,10 @@ void	Convert::convertInput()
 
 	this->type_ = Convert::parseInput();
 
-	if (this->getType() == NAN_INF)
+	if (this->getType() == NAN_INF) {
 		return ;
-	int i;
+	}
+	size_t i;
 	for (i = 0; i < 4; i++)
 	{
 		if (this->getType() == types[i])
@@ -103,23 +99,23 @@ void	Convert::printValues() const
 	// display char
 	if (this->getType() != NAN_INF)
 	{
-		if (isprint(this->getCharType()))
+		if (isprint(this->getCharType())) {
 			std::cout << "char: '" << this->getCharType() << "'" << std::endl;
-		else
+		}
+		else {
 			std::cout << "char: Non displayable" << std::endl;
+		}
 	} else {
 		std::cout << "char: impossible" << std::endl;
 	}
 	// display int
-	if (this->getType() != NAN_INF )
-	{
+	if (this->getType() != NAN_INF ) {
 		std::cout << "int: " << this->getIntType() << std::endl;
 	} else {
 		std::cout << "int: impossible" << std::endl;
 	}
 	// display float
-	if (this->getType() != NAN_INF)
-	{
+	if (this->getType() != NAN_INF) {
 		std::cout << "float: " << this->getFloatType();
 		if (this->getFloatType() - this->getIntType() == 0) {
 			std::cout << ".0f" << std::endl;
