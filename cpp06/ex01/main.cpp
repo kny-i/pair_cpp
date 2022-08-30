@@ -4,6 +4,7 @@
 int main()
 {
 	t_data ptr2;
+
 	ptr2.name = "Nop";
 	ptr2.age = 42;
 	ptr2.next = NULL;
@@ -12,7 +13,6 @@ int main()
 	ptr.name = "AKO";
 	ptr.age = 42;
 	ptr.next = &ptr2;
-
 
 	std::cout << "Here is the original structs:" <<
 			  "\n\taddress: " << &ptr <<
@@ -28,7 +28,7 @@ int main()
 
 	Serializer a;
 
-	t_data *reserialized_struct = a.unserialize(a.serialize(&ptr));
+	t_data *reserialized_struct = a.deserialize(a.serialize(&ptr));
 
 	std::cout << "Here is the reserialized structs:" <<
 			  "\n\taddress: " << reserialized_struct <<

@@ -28,7 +28,7 @@ public:
 	void fromDouble();
 
 	//debug
-	void debug();
+	void debug() const;
 
 	/* canonical form */
 	Convert(const std::string &value);

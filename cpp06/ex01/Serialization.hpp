@@ -7,9 +7,9 @@
 #include <stdint.h> // otherwise uintptr_t won't compile with c++98 standard
 
 typedef struct s_data {
-	std::string	name;
-	size_t		age;
 	struct s_data *next;
+	size_t		age;
+	std::string	name;
 } t_data;
 
 class Serializer
@@ -25,7 +25,7 @@ public:
 
 
 	uintptr_t serialize(t_data *ptr);
-	t_data *unserialize(uintptr_t raw);
+	t_data *deserialize(uintptr_t raw);
 
 };
 #endif //PAIR_CPP_SERIALIZATION_HPP

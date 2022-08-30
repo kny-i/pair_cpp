@@ -12,6 +12,7 @@ bool Convert::isMultipleSigns()
 	}
 	return false;
 }
+
 int Convert::parseInput()
 {
 	if (this->getValue() == "nan" ||
@@ -21,25 +22,27 @@ int Convert::parseInput()
 	this->getValue() == "-inff") {
 		return NAN_INF;
 	} else if (this->getValue().length() == 1 &&
-			 (this->getValue()[0] == '+' || this->getValue()[0] == '-' || // prevents that the input of single digit integers get interpreted as a char
-			  this->getValue()[0] == 'f' || this->getValue()[0] == '.')) {
+			 (this->getValue()[0] == '+' ||
+			 this->getValue()[0] == '-' ||
+			 this->getValue()[0] == 'f' ||
+			 this->getValue()[0] == '.')) {
 		return CHAR;
 	} else if (isMultipleSigns() == true) {
 		throw Convert::ErrorException();
-	} else if (this->getValue().find_first_not_of("+-0123456789") == std::string::npos ) {//指定された文字列中のいずれの文字にも一致しない最初の場所を検索する。
+	} else if (this->getValue().find_first_not_of("+-0123456789") == std::string::npos) {//指定された文字列中のいずれの文字にも一致しない最初の場所を検索する。
 		return INT;
 	} else if (this->getValue().find_first_not_of("+-0123456789.") == std::string::npos) {//指定された文字列中のいずれの文字にも一致しない最初の場所を検索する。
-		if (this->getValue().find_first_of('.') != this->getValue().find_last_of(".") || // catches `0..0`
-			isdigit(this->getValue()[this->getValue().find_first_of(".") + 1]) == false || // catches `0.`
+		if (this->getValue().find_first_of('.') != this->getValue().find_last_of('.') || // catches `0..0`
+			isdigit(this->getValue()[this->getValue().find_first_of('.') + 1]) == false || // catches `0.`
 			this->getValue().find_first_of('.') == 0){ // catches `.0`
 			return ERROR;
 		} else {
 			return DOUBLE;
 		}
 	} else if (this->getValue().find_first_not_of("+-0123456789.f") == std::string::npos) {
-		if (this->getValue().find_first_of('f') != this->getValue().find_last_of("f") || // catches `0.0ff`
-			this->getValue().find_first_of('.') != this->getValue().find_last_of(".") || // catches `0..0f`
-			this->getValue().find_first_of('f') - this->getValue().find_first_of(".") == 1 || //catches `0.f`
+		if (this->getValue().find_first_of('f') != this->getValue().find_last_of('f') || // catches `0.0ff`
+			this->getValue().find_first_of('.') != this->getValue().find_last_of('.') || // catches `0..0f`
+			this->getValue().find_first_of('f') - this->getValue().find_first_of('.') == 1 || //catches `0.f`
 			this->getValue().find_first_of('.') == 0 || // catches `.0f`
 			this->getValue()[this->getValue().find_first_of('f') + 1] != '\0') {// catches `0.0f0`
 			return ERROR;
@@ -49,8 +52,7 @@ int Convert::parseInput()
 	} else if ((this->getValue().length() == 1 && std::isprint(this->getValue()[0])) ||
 			 (this->getValue().length() == 1 && std::isalpha(this->getValue()[0]))) {
 		return CHAR;
-	}
-	else {
+	} else {
 		return ERROR;
 	}
 }
@@ -242,7 +244,7 @@ void Convert::setDoubleType(double doubleType) {
 }
 
 //debug
-void Convert::debug()
+void Convert::debug() const
 {
 	std::cerr << "========================" << std::endl;
 	std::cerr << this->getIntType() << std::endl;
