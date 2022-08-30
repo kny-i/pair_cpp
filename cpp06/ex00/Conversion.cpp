@@ -55,6 +55,7 @@ int Convert::parseInput()
 	}
 }
 
+/* fromType function */
 void Convert::fromChar()
 {
 	this->charType_ = static_cast<unsigned char>(this->getValue()[0]);
@@ -62,6 +63,7 @@ void Convert::fromChar()
 	this->floatType_ = static_cast<float>(this->getCharType());
 	this->doubleType_ = static_cast<double>(this->getCharType());
 }
+
 void Convert::fromInt()
 {
 	this->intType_ = static_cast<int>(this->getDoubleType());
@@ -74,6 +76,7 @@ void Convert::fromFloat()
 	this->charType_ = static_cast<char>(this->getFloatType());
 	this->intType_ = static_cast<int>(this->getFloatType());
 }
+
 void Convert::fromDouble()
 {
 	this->charType_ = static_cast<char>(this->getDoubleType());
@@ -81,11 +84,15 @@ void Convert::fromDouble()
 	this->floatType_ = static_cast<float>(this->getDoubleType());
 }
 
-void	Convert::convertInput()
+void Convert::convertInput()
 {
 	void (Convert::*functionPTRS[])() =
 			{&Convert::fromChar, &Convert::fromInt, &Convert::fromFloat, &Convert::fromDouble};
-	int types[] = {CHAR, INT, FLOAT, DOUBLE};
+	size_t types[] =
+			{CHAR,
+			 INT,
+			 FLOAT,
+			 DOUBLE};
 
 	this->type_ = Convert::parseInput();
 	if (this->getType() == NAN_INF) {
@@ -103,10 +110,6 @@ void	Convert::convertInput()
 	}
 }
 
-const char *Convert::ErrorException::what() const throw()
-{
-	return "Error: Impossible to print or input not convertable";
-}
 
 void	Convert::printValues() const
 {
@@ -234,5 +237,22 @@ double Convert::getDoubleType() const {
 
 void Convert::setDoubleType(double doubleType) {
 	doubleType_ = doubleType;
+}
+
+//debug
+void Convert::debug()
+{
+	std::cerr << "========================" << std::endl;
+	std::cerr << this->getIntType() << std::endl;
+	std::cerr << this->getCharType() << std::endl;
+	std::cerr << this->getFloatType() << std::endl;
+	std::cerr << this->getDoubleType() << std::endl;
+	std::cerr << "========================" << std::endl;
+}
+
+//exception
+const char *Convert::ErrorException::what() const throw()
+{
+	return "Error: Impossible to print or input not convertable";
 }
 

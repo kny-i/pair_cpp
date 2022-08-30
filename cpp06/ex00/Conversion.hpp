@@ -16,13 +16,19 @@ enum {
 class Convert {
 public:
 	int	parseInput();
+	void convertInput();
+	void printValues() const;
+	bool isMultipleSigns();
+
+
+	/* fromType functions */
 	void fromChar();
 	void fromInt();
 	void fromFloat();
 	void fromDouble();
-	void convertInput();
-	void printValues() const;
-	bool isMultipleSigns();
+
+	//debug
+	void debug();
 
 	/* canonical form */
 	Convert(std::string value);
@@ -61,3 +67,4 @@ private:
 };
 
 #endif //PAIR_CPP_CONVERSION_HPP
+
