@@ -6,6 +6,15 @@
 #include <iostream>
 #include "Array.hpp"
 
+int main()
+{
+	/* tips */
+	int *a = new int ();
+	std::cout << *a << std::endl;
+}
+
+/* from PDF */
+/*
 #define MAX_VAL 750
 int main(int, char**)
 {
@@ -56,4 +65,4 @@ int main(int, char**)
 	delete [] mirror;//
 	return 0;
 }
-
+*/

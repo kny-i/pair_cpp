@@ -18,10 +18,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="caf301c4-b1da-427a-b567-70f1e703cf05" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/cpp07/ex02/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cpp07/ex01/iter.cpp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cpp07/ex01/iter.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/cpp07/ex01/iter.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cpp07/ex01/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cpp07/ex01/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp07/ex02/Array.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp07/ex02/Array.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/cpp07/ex02/Array.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp07/ex02/Array.tpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp07/ex02/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cpp07/ex02/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +56,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "/Users/kodairaharyu/42tokyo/pair_cpp",
+    "last_opened_file_path": "/Users/kodairaharyu/42tokyo/pair_cpp/cpp07/ex02",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -62,6 +65,11 @@
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cpp07/ex02" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
@@ -83,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1661894998944</updated>
       <workItem from="1661895000240" duration="1357000" />
-      <workItem from="1661899415918" duration="1770000" />
+      <workItem from="1661899415918" duration="2916000" />
     </task>
     <servers />
   </component>
