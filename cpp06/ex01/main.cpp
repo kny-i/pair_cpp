@@ -1,6 +1,15 @@
 #include "Serialization.hpp"
 
 
+void print(t_data data) {
+	std::cout << std::endl << "__________________" << std::endl;
+	std::cout << "\naddress: " << &data <<
+	"\nname: " << data.name <<
+	"\nage: " << data.age <<
+	"\naddress next: " << data.next <<
+	std::endl;
+}
+
 int main()
 {
 	t_data ptr2;
@@ -13,34 +22,17 @@ int main()
 	ptr.name = "AKO";
 	ptr.age = 42;
 	ptr.next = &ptr2;
+	std::cout << "<<<Here is the original structs>>>";
+	print(ptr);
+	print(ptr2);
 
-	std::cout << "Here is the original structs:" <<
-			  "\n\taddress: " << &ptr <<
-			  "\n\tname: " << ptr.name <<
-			  "\n\tage: " << ptr.age <<
-			  "\n\taddress next: " << ptr.next <<
-			  std::endl;
-	std::cout << "\taddress ptr2: " << &ptr2 <<
-			  "\n\tname: " << ptr2.name <<
-			  "\n\tage: " << ptr2.age <<
-			  "\n\taddress next: " << ptr2.next <<
-			  std::endl << std::endl;
 
 	Serializer a;
 
 	t_data *reserialized_struct = a.deserialize(a.serialize(&ptr));
 
-	std::cout << "Here is the reserialized structs:" <<
-			  "\n\taddress: " << reserialized_struct <<
-			  "\n\tname: " << reserialized_struct->name <<
-			  "\n\tage: " << reserialized_struct->age <<
-			  "\n\taddress next: " << reserialized_struct->next <<
-			  std::endl;
-	std::cout << "\taddress ptr2: " << &ptr2 <<
-			  "\n\tname: " << ptr2.name <<
-			  "\n\tage: " << ptr2.age <<
-			  "\n\taddress next: " << ptr2.next <<
-			  std::endl << std::endl;
-
-	return (0);
+	t_data *reserialized_struct2 = a.deserialize(a.serialize(&ptr2));
+	std::cout << std::endl << "<<<Here is the reserialized structs>>>";
+	print(*reserialized_struct);
+	print(*reserialized_struct2);
 }
