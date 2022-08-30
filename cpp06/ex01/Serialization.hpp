@@ -6,12 +6,11 @@
 #include <iostream>
 #include <stdint.h> // otherwise uintptr_t won't compile with c++98 standard
 
-typedef struct Data
-{
+typedef struct s_data {
 	std::string	name;
 	size_t		age;
-	Data		*next;
-}				Data;
+	struct s_data *next;
+} t_data;
 
 class Serializer
 {
@@ -25,8 +24,8 @@ public:
 	Serializer &operator=(const Serializer &src);
 
 
-	uintptr_t serialize(Data *ptr);
-	Data *unserialize(uintptr_t raw);
+	uintptr_t serialize(t_data *ptr);
+	t_data *unserialize(uintptr_t raw);
 
 };
 #endif //PAIR_CPP_SERIALIZATION_HPP

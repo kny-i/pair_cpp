@@ -1,14 +1,14 @@
 
 #include "Serialization.hpp"
 
-uintptr_t	Serializer::serialize(Data *ptr)
+uintptr_t	Serializer::serialize(t_data *ptr)
 {
 	return (reinterpret_cast<uintptr_t>(ptr));
 }
 
-Data	*Serializer::unserialize(uintptr_t raw)
+t_data	*Serializer::unserialize(uintptr_t raw)
 {
-	return (reinterpret_cast<Data *>(raw));
+	return (reinterpret_cast<t_data *>(raw));
 }
 
 Serializer::Serializer()
