@@ -31,7 +31,7 @@ public:
 	void debug();
 
 	/* canonical form */
-	Convert(std::string value);
+	Convert(const std::string &value);
 	Convert(const Convert &rhs);
 	Convert &operator=(const Convert &rhs);
 	~Convert();

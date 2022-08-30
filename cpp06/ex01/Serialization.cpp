@@ -11,27 +11,19 @@ t_data	*Serializer::unserialize(uintptr_t raw)
 	return (reinterpret_cast<t_data *>(raw));
 }
 
-Serializer::Serializer()
-{
-	std::cout << "Serializer Default Constructor called" << std::endl;
-}
+Serializer::Serializer() {}
 
-Serializer::Serializer(const Serializer &src)
+Serializer::Serializer(const Serializer &rhs)
 {
-	std::cout << "Serializer Copy Constructor called" << std::endl;
-	*this = src;
+	*this = rhs;
 }
 
 
-Serializer::~Serializer()
-{
-	std::cout << "Serializer Deconstructor called" << std::endl;
-}
+Serializer::~Serializer() {}
 
 
 Serializer &Serializer::operator=(const Serializer &rhs)
 {
-	std::cout << "Serializer Assignation operator called" << std::endl;
 	if (this != &rhs) {
 		(void)rhs;
 	}
