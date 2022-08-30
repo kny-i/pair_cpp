@@ -6,35 +6,35 @@
 #include <cstdlib>
 #include <cstdio>
 
-static Base *generate(void)
+static Base *generate()
 {
-	switch (rand() % 3)
-	{
+	switch (rand() % 3) {
 		case 0:
-			return (new A());
+			return new A();
 			break;
 		case 1:
-			return (new B());
+			return new B();
 			break;
 		case 2:
-			return (new C());
+			return new C();
 			break;
 		default:
-			perror("Something went wrong with the random generator");
-			return (NULL);
+			std::cout << "rand failure" << std::endl;
+			return NULL;
 	}
 }
 
 static void identify(Base *Test)
 {
-	if (dynamic_cast<A *>(Test))
+	if (dynamic_cast<A *>(Test) != NULL) {
 		std::cout << "A is the identified type" << std::endl;
-	else if (dynamic_cast<B *>(Test))
+	} else if (dynamic_cast<B *>(Test) != NULL) {
 		std::cout << "B is the identified type" << std::endl;
-	else if (dynamic_cast<C *>(Test))
+	} else if (dynamic_cast<C *>(Test) != NULL) {
 		std::cout << "C is the identified type" << std::endl;
-	else
+	} else {
 		std::cout << "unknown type" << std::endl;
+	}
 }
 
 static int i = 0;
@@ -42,27 +42,23 @@ static std::string classes[] = {"A", "B", "C"};
 
 static void identify(Base &Test)
 {
-	while (i < 3)
-	{
+	while (i < 3) {
 		void *foo = NULL;
-		Base &unused = (Base &)foo; //Werrorで怒られる
-		try
-		{
-			if (i == 0)
+		Base &unused = (Base &)foo;
+		try {
+			if (i == 0) {
 				unused = dynamic_cast<A &>(Test);
-			else if (i == 1)
+			} else if (i == 1) {
 				unused = dynamic_cast<B &>(Test);
-			else if (i == 2)
+			} else if (i == 2) {
 				unused = dynamic_cast<C &>(Test);
-			else
+			} else {
 				std::cout << "unknow type" << std::endl;
-			(void)unused;
-		}
-		catch (std::exception &e)
-		{
-			//std::cout << e.what() << std::endl; //例外の種類を見れる
+			}
+		} catch (std::exception &e) {
+			std::cerr << e.what() << std::endl;
 			i++;
-			identify(Test);//再起
+			identify(Test);//recursive
 			return;
 		}
 		std::cout << classes[i] << " is the identified type" << std::endl;
@@ -74,19 +70,12 @@ static void identify(Base &Test)
 int main()
 {
 	srand(time(NULL)); // enables the randomness of the generate function
-	for (int j = 0; j < 1; j++)
-	{
+	for (int j = 0; j < 1; j++) {
 		Base *Test = generate();
-		if (Test == NULL)
-			return (1);
-		else
-		{
-			identify(Test);
-			identify(*Test);
-			delete (Test);
-
-			std::cout << std::endl;
-		}
+		identify(Test);
+		identify(*Test);
+		delete (Test);
+		std::cout << std::endl;
 	}
-	return (0);
 }
+

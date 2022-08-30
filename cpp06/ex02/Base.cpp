@@ -1,6 +1,4 @@
 #include "Base.hpp"
 
 // Destructor
-Base::~Base()
-{
-}
+Base::~Base() {}
