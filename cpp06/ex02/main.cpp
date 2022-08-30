@@ -19,7 +19,7 @@ static Base *generate()
 			return new C();
 			break;
 		default:
-			std::cout << "rand failure" << std::endl;
+			std::cerr << "rand failure" << std::endl;
 			return NULL;
 	}
 }
@@ -43,15 +43,16 @@ static std::string classes[] = {"A", "B", "C"};
 static void identify(Base &Test)
 {
 	while (i < 3) {
-		void *foo = NULL;
-		Base &unused = (Base &)foo;
 		try {
 			if (i == 0) {
-				unused = dynamic_cast<A &>(Test);
+				Base &unused = dynamic_cast<A &>(Test);
+				(void)unused;
 			} else if (i == 1) {
-				unused = dynamic_cast<B &>(Test);
+				Base &unused = dynamic_cast<B &>(Test);
+				(void)unused;
 			} else if (i == 2) {
-				unused = dynamic_cast<C &>(Test);
+				Base &unused = dynamic_cast<C &>(Test);
+				(void)unused;
 			} else {
 				std::cout << "unknow type" << std::endl;
 			}
