@@ -14,9 +14,11 @@ bool Convert::isMultipleSigns()
 }
 int Convert::parseInput()
 {
-	if (this->getValue().compare("nan") == 0 || this->getValue().compare("+inf") == 0 ||
-		this->getValue().compare("-inf") == 0 || this->getValue().compare("+inff") == 0 ||
-		this->getValue().compare("-inff") == 0) {
+	if (this->getValue() == "nan" ||
+	this->getValue() == "+inf" ||
+	this->getValue() == "-inf" ||
+	this->getValue() == "+inff" ||
+	this->getValue() == "-inff") {
 		return NAN_INF;
 	} else if (this->getValue().length() == 1 &&
 			 (this->getValue()[0] == '+' || this->getValue()[0] == '-' || // prevents that the input of single digit integers get interpreted as a char
@@ -81,25 +83,24 @@ void Convert::fromDouble()
 
 void	Convert::convertInput()
 {
-	void (Convert::*functionPTRS[])() = {&Convert::fromChar, &Convert::fromInt, &Convert::fromFloat, &Convert::fromDouble};
+	void (Convert::*functionPTRS[])() =
+			{&Convert::fromChar, &Convert::fromInt, &Convert::fromFloat, &Convert::fromDouble};
 	int types[] = {CHAR, INT, FLOAT, DOUBLE};
 
 	this->type_ = Convert::parseInput();
-
 	if (this->getType() == NAN_INF) {
 		return ;
 	}
-	size_t i;
-	for (i = 0; i < 4; i++)
-	{
-		if (this->getType() == types[i])
-		{
+	size_t i = 0;
+	for (; i < 4; i++) {
+		if (this->getType() == types[i]) {
 			(this->*functionPTRS[i])();
 			break ;
 		}
 	}
-	if (i == 4)
+	if (i == 4) {
 		throw Convert::ErrorException();
+	}
 }
 
 const char *Convert::ErrorException::what() const throw()
@@ -110,12 +111,10 @@ const char *Convert::ErrorException::what() const throw()
 void	Convert::printValues() const
 {
 	// display char
-	if (this->getType() != NAN_INF)
-	{
-		if (isprint(this->getCharType())) {
+	if (this->getType() != NAN_INF) {
+		if (isprint(this->getCharType()) == true) {
 			std::cout << "char: '" << this->getCharType() << "'" << std::endl;
-		}
-		else {
+		} else {
 			std::cout << "char: Non displayable" << std::endl;
 		}
 	} else {
@@ -159,8 +158,7 @@ void	Convert::printValues() const
 			std::cout << "double: nan" << std::endl;
 		} else if (this->getValue()[0] == '+') {
 			std::cout << "double: +inf" << std::endl;
-		}
-		else {
+		} else {
 			std::cout << "double: -inf" << std::endl;
 		}
 	}
@@ -170,7 +168,7 @@ void	Convert::printValues() const
 Convert::Convert(std::string value) : value_(value)
 {
 	std::cout << "Conversion Constructor for " << this->getValue() << std::endl;
-	this->doubleType_ = std::atof(this->getValue().c_str());
+	this->doubleType_ = atof(this->getValue().c_str());
 	this->convertInput();
 	this->printValues();
 }
@@ -189,6 +187,7 @@ Convert &Convert::operator=(const Convert &rhs) {
 
 Convert::~Convert() {}
 
+/* accessor */
 const std::string &Convert::getValue() const {
 	return value_;
 }
