@@ -24,13 +24,13 @@ static Base *generate()
 	}
 }
 
-static void identify(Base *Test)
+static void identify(Base *p)
 {
-	if (dynamic_cast<A *>(Test) != NULL) {
+	if (dynamic_cast<A *>(p) != NULL) {
 		std::cout << "A is the identified type" << std::endl;
-	} else if (dynamic_cast<B *>(Test) != NULL) {
+	} else if (dynamic_cast<B *>(p) != NULL) {
 		std::cout << "B is the identified type" << std::endl;
-	} else if (dynamic_cast<C *>(Test) != NULL) {
+	} else if (dynamic_cast<C *>(p) != NULL) {
 		std::cout << "C is the identified type" << std::endl;
 	} else {
 		std::cout << "unknown type" << std::endl;
@@ -40,18 +40,18 @@ static void identify(Base *Test)
 static int i = 0;
 static std::string classes[] = {"A", "B", "C"};
 
-static void identify(Base &Test)
+static void identify(Base &p)
 {
 	while (i < 3) {
 		try {
 			if (i == 0) {
-				Base &unused = dynamic_cast<A &>(Test);
+				Base &unused = dynamic_cast<A &>(p);
 				(void)unused;
 			} else if (i == 1) {
-				Base &unused = dynamic_cast<B &>(Test);
+				Base &unused = dynamic_cast<B &>(p);
 				(void)unused;
 			} else if (i == 2) {
-				Base &unused = dynamic_cast<C &>(Test);
+				Base &unused = dynamic_cast<C &>(p);
 				(void)unused;
 			} else {
 				std::cout << "unknow type" << std::endl;
@@ -59,7 +59,7 @@ static void identify(Base &Test)
 		} catch (std::exception &e) {
 			std::cerr << e.what() << std::endl;
 			i++;
-			identify(Test);//recursive
+			identify(p);//recursive
 			return;
 		}
 		std::cout << classes[i] << " is the identified type" << std::endl;
@@ -72,10 +72,10 @@ int main()
 {
 	srand(time(NULL)); // enables the randomness of the generate function
 	for (int j = 0; j < 1; j++) {
-		Base *Test = generate();
-		identify(Test);
-		identify(*Test);
-		delete (Test);
+		Base *p = generate();
+		identify(p);
+		identify(*p);
+		delete (p);
 		std::cout << std::endl;
 	}
 }

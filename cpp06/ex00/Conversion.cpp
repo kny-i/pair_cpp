@@ -1,4 +1,9 @@
 #include "Conversion.hpp"
+/*
+ * -0に対応する必要あり
+ * 01/0100
+ * ↑数字の限定が甘い
+ */
 
 bool Convert::isMultipleSigns()
 {
@@ -247,10 +252,10 @@ void Convert::setDoubleType(double doubleType) {
 void Convert::debug() const
 {
 	std::cerr << "========================" << std::endl;
-	std::cerr << this->getIntType() << std::endl;
-	std::cerr << this->getCharType() << std::endl;
-	std::cerr << this->getFloatType() << std::endl;
-	std::cerr << this->getDoubleType() << std::endl;
+	std::cerr << "int:" << this->getIntType() << std::endl;
+	std::cerr << "char:"<< this->getCharType() << std::endl;
+	std::cerr << "float:" << this->getFloatType() << std::endl;
+	std::cerr << "double:" << this->getDoubleType() << std::endl;
 	std::cerr << "========================" << std::endl;
 }
 
