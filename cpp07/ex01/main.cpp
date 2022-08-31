@@ -2,7 +2,26 @@
 // Created by 小平波琉 on 2022/08/04.
 //
 #include "iter.hpp"
-/*
+
+
+class Awesome
+{
+public:
+	Awesome( void ) : _n( 42 ) { return; }
+	int get( void ) const { return this->_n; }
+private:
+	int _n;
+};
+
+std::ostream & operator<<(std::ostream &o, Awesome &a) {
+	o << a.get();
+	return o;
+}
+
+template <typename T>
+void scale_print( T const & x ) { std::cout << x << std::endl; return; }
+
+
 int main()
 {
 	{
@@ -35,32 +54,9 @@ int main()
 		std::string array[] = {"NOP", "SATAHARU",  "BUNJIRO"};
 		::iter(array, sizeof(array) / sizeof(array[0]), print);
 	}
-}
-*/
-
-class Awesome
-{
-public:
-	Awesome( void ) : _n( 42 ) { return; }
-	int get( void ) const { return this->_n; }
-private:
-	int _n;
-};
-
-std::ostream & operator<<(std::ostream &o, Awesome &a) {
-	o << a.get();
-	return o;
-}
-
-template <typename T>
-void scale_print( T const & x ) { std::cout << x << std::endl; return; }
-
-int main() {
-	int tab[] = { 0, 1, 2, 3, 4 };
+ int tab[] = { 0, 1, 2, 3, 4 };
 	Awesome tab2[5];
 	iter( tab2, 5, scale_print );
 
 	iter( tab, 5, scale_print );
-	return 0;
 }
-

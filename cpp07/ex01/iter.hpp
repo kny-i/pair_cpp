@@ -32,7 +32,6 @@ void iter(const T *array, size_t len, void (*f)(T &)) {
 }
 
 /* template for test */
-/*
 template <typename T>
 void print(const T &value) {
 	std::cout << value << std::endl;
@@ -41,5 +40,5 @@ template <typename T>
 void print(const T value) {
 	std::cout << value << " ";
 }
-*/
+
 #endif //CPP_ITER_HPP
