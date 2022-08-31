@@ -17,7 +17,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caf301c4-b1da-427a-b567-70f1e703cf05" name="Changes" comment="" />
+    <list default="true" id="caf301c4-b1da-427a-b567-70f1e703cf05" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp06/ex00/Conversion.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cpp06/ex00/Conversion.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp06/ex00/Conversion.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/cpp06/ex00/Conversion.hpp" afterDir="false" />
+    </list>
+    <list id="98256e08-511f-4292-bd71-002d25edf6d5" name="Changes by yukikondo::n" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

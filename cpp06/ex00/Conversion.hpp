@@ -17,8 +17,9 @@ class Convert {
 public:
 	int	parseInput();
 	void convertInput();
-	void printValues() const;
+	void printValues();
 	bool isMultipleSigns();
+//	bool checkOverflow();
 
 
 	/* fromType functions */
@@ -65,6 +66,8 @@ private:
 	float floatType_;
 	double doubleType_;
 };
+
+//long long ft_atoll(char *str);
 
 #endif //PAIR_CPP_CONVERSION_HPP
 

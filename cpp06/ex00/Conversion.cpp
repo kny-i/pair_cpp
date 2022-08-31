@@ -1,13 +1,8 @@
 #include "Conversion.hpp"
-/*
- * -0に対応する必要あり
- * 01/0100
- * ↑数字の限定が甘い
- */
 
 bool Convert::isMultipleSigns()
 {
-	size_t i = 1; //it's ok to have signs at the word
+	size_t i = 1;
 	std::string str = getValue();
 	while (str[i]) {
 		if (str[i] == '-' || str[i] == '+') {
@@ -24,7 +19,8 @@ int Convert::parseInput()
 	this->getValue() == "+inf" ||
 	this->getValue() == "-inf" ||
 	this->getValue() == "+inff" ||
-	this->getValue() == "-inff") {
+	this->getValue() == "-inff" ||
+	this->getValue() == "nanf"){
 		return NAN_INF;
 	} else if (this->getValue().length() == 1 &&
 			 (this->getValue()[0] == '+' ||
@@ -34,22 +30,22 @@ int Convert::parseInput()
 		return CHAR;
 	} else if (isMultipleSigns() == true) {
 		throw Convert::ErrorException();
-	} else if (this->getValue().find_first_not_of("+-0123456789") == std::string::npos) {//指定された文字列中のいずれの文字にも一致しない最初の場所を検索する。
+	} else if (this->getValue().find_first_not_of("+-0123456789") == std::string::npos) {
 		return INT;
-	} else if (this->getValue().find_first_not_of("+-0123456789.") == std::string::npos) {//指定された文字列中のいずれの文字にも一致しない最初の場所を検索する。
-		if (this->getValue().find_first_of('.') != this->getValue().find_last_of('.') || // catches `0..0`
-			isdigit(this->getValue()[this->getValue().find_first_of('.') + 1]) == false || // catches `0.`
-			this->getValue().find_first_of('.') == 0){ // catches `.0`
+	} else if (this->getValue().find_first_not_of("+-0123456789.") == std::string::npos) {
+		if (this->getValue().find_first_of('.') != this->getValue().find_last_of('.') ||
+			isdigit(this->getValue()[this->getValue().find_first_of('.') + 1]) == false ||
+			this->getValue().find_first_of('.') == 0){
 			return ERROR;
 		} else {
 			return DOUBLE;
 		}
 	} else if (this->getValue().find_first_not_of("+-0123456789.f") == std::string::npos) {
-		if (this->getValue().find_first_of('f') != this->getValue().find_last_of('f') || // catches `0.0ff`
-			this->getValue().find_first_of('.') != this->getValue().find_last_of('.') || // catches `0..0f`
-			this->getValue().find_first_of('f') - this->getValue().find_first_of('.') == 1 || //catches `0.f`
-			this->getValue().find_first_of('.') == 0 || // catches `.0f`
-			this->getValue()[this->getValue().find_first_of('f') + 1] != '\0') {// catches `0.0f0`
+		if (this->getValue().find_first_of('f') != this->getValue().find_last_of('f') ||
+			this->getValue().find_first_of('.') != this->getValue().find_last_of('.') ||
+			this->getValue().find_first_of('f') - this->getValue().find_first_of('.') == 1 ||
+			this->getValue().find_first_of('.') == 0 ||
+			this->getValue()[this->getValue().find_first_of('f') + 1] != '\0') {
 			return ERROR;
 		} else {
 			return FLOAT;
@@ -122,10 +118,11 @@ void Convert::convertInput()
 	}
 }
 
-void	Convert::printValues() const
+void	Convert::printValues()
 {
-	// display char
-	if (this->getType() != NAN_INF) {
+	if (this->getType() != NAN_INF
+	&& (std::numeric_limits<char>::min() <= this->getCharType()
+	&& this->getCharType() <= std::numeric_limits<char>::max())) {
 		if (isprint(this->getCharType()) == true) {
 			std::cout << "char: '" << this->getCharType() << "'" << std::endl;
 		} else {
@@ -134,16 +131,18 @@ void	Convert::printValues() const
 	} else {
 		std::cout << "char: impossible" << std::endl;
 	}
-	// display int
-	if (this->getType() != NAN_INF) {
+	if (this->getType() != NAN_INF
+	&& (std::numeric_limits<int>::min() <= this->getDoubleType()
+	&& this->getDoubleType() <= std::numeric_limits<int>::max())) {
 		std::cout << "int: " << this->getIntType() << std::endl;
 	} else {
 		std::cout << "int: impossible" << std::endl;
 	}
-	// display float
-	if (this->getType() != NAN_INF) {
+	if (this->getType() != NAN_INF
+	&& (std::numeric_limits<float>::min() <= this->floatType_
+	&& this->getFloatType() <= std::numeric_limits<float>::max())) {
 		std::cout << "float: " << this->getFloatType();
-		if (static_cast<int>(this->getFloatType()) - this->getIntType() == 0) {
+		if (this->getFloatType() - static_cast<float>(this->getIntType()) == 0) {
 			std::cout << ".0f" << std::endl;
 		} else {
 			std::cout << "f" << std::endl;
@@ -157,8 +156,6 @@ void	Convert::printValues() const
 			std::cout << "float: -inff" << std::endl;
 		}
 	}
-
-	// display double
 	if (this->getType() != NAN_INF) {
 		std::cout << "double: " << this->getDoubleType();
 		if (this->getDoubleType() - this->getIntType() == 0) {
@@ -181,6 +178,7 @@ void	Convert::printValues() const
 Convert::Convert(const std::string &value) : value_(value)
 {
 	this->doubleType_ = atof(this->getValue().c_str());
+
 	this->convertInput();
 	this->printValues();
 }
