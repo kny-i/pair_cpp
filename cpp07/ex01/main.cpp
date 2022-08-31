@@ -62,6 +62,5 @@ int main() {
 
 	iter( tab, 5, scale_print );
 	return 0;
-
 }
 
