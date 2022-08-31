@@ -1,7 +1,3 @@
-//
-// Created by 小平波琉 on 2022/08/31.
-//
-
 #ifndef PAIR_CPP_ARRAY_TPP
 #define PAIR_CPP_ARRAY_TPP
 
