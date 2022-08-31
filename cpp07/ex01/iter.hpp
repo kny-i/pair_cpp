@@ -16,7 +16,7 @@ void iter(T *array, size_t len, void (*f)(T &)) {
 	}
 }
 template <typename T>
-void iter(const T *array, size_t len, const void (*f)(T &)) {
+void iter(const T *array, size_t len, void (*f)(T &)) {
 	if (array == NULL || f == NULL) {
 		return ;
 	}
