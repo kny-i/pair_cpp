@@ -58,6 +58,12 @@ int main(int, char**)
 		numbers[i] = rand();
 	}
 	delete [] mirror;//
+
+ 	Array<int> test(0); // empty array
+	Array<int> test_100(100); // empty array
+
+	std::cout << test << std::endl;
+	std::cout << test_100 << std::endl;
 	return 0;
 }
 */
