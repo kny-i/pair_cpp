@@ -51,12 +51,16 @@ int main()
 	}
 	{
 		std::cout << std::endl << "[STRING CASE]" << std::endl;
-		std::string array[] = {"NOP", "SATAHARU",  "BUNJIRO"};
+		std::string array[] = {"NOP", "SATAHARU", "BUNJIRO"};
 		::iter(array, sizeof(array) / sizeof(array[0]), print);
 	}
- int tab[] = { 0, 1, 2, 3, 4 };
-	Awesome tab2[5];
-	iter( tab2, 5, scale_print );
 
-	iter( tab, 5, scale_print );
+	{
+		std::cout << "[SCALE TESTCASE]" << std::endl;
+		int tab[] = { 0, 1, 2, 3, 4 };
+		Awesome tab2[5];
+		iter( tab2, 5, scale_print );
+
+		iter( tab, 5, scale_print );
+	}
 }
