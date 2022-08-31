@@ -11,12 +11,26 @@
 class Array {
 public:
 	/* canonical form */
-	Array(unsigned int defaultValue = 0);
-	Array(const Array &rhs);
-	Array &operator=(const Array &rhs);
-	virtual ~Array();
+	Array() : arraySize_(0) {}
+	Array(unsigned int value) : arraySize_(value) {
+		array = new T();
+	}
+	Array(const Array &rhs) {
+		*this = rhs;
+	}
+
+	Array &operator=(const Array &rhs) {
+		if (this != rhs) {
+			this->arraySize_ = rhs.arraySize_;
+			this->array_ = rhs.array_;
+		}
+		return *this;
+	}
+	virtual ~Array() {
+		delete [] array;
+	}
 private:
-	unsigned int size_;
+	unsigned int arraySize_;
 	T *array_;
 };
 
