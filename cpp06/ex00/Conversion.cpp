@@ -13,6 +13,18 @@ bool Convert::isMultipleSigns()
 	return false;
 }
 
+bool Convert::isMultipleZero()
+{
+	std::string str = getValue();
+	if (((str[0] == '0')
+	|| (str[0] == '-' && str[1] == '0')
+	|| (str[0] == '+' && str[1] == '0')) && str.size() != 1) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 int Convert::parseInput()
 {
 	if (this->getValue() == "nan" ||
@@ -28,7 +40,7 @@ int Convert::parseInput()
 			 this->getValue()[0] == 'f' ||
 			 this->getValue()[0] == '.')) {
 		return CHAR;
-	} else if (isMultipleSigns() == true) {
+	} else if (isMultipleSigns() == true || isMultipleZero() == true) {
 		throw Convert::ErrorException();
 	} else if (this->getValue().find_first_not_of("+-0123456789") == std::string::npos) {
 		return INT;
@@ -120,9 +132,10 @@ void Convert::convertInput()
 
 void	Convert::printValues()
 {
+	/* [CHAR] */
 	if (this->getType() != NAN_INF
-	&& (std::numeric_limits<char>::min() <= this->getCharType()
-	&& this->getCharType() <= std::numeric_limits<char>::max())) {
+	&& (std::numeric_limits<char>::min() <= this->getDoubleType()
+	&& this->getDoubleType() <= std::numeric_limits<char>::max())) {
 		if (isprint(this->getCharType()) == true) {
 			std::cout << "char: '" << this->getCharType() << "'" << std::endl;
 		} else {
@@ -131,6 +144,7 @@ void	Convert::printValues()
 	} else {
 		std::cout << "char: impossible" << std::endl;
 	}
+	/* [INT] */
 	if (this->getType() != NAN_INF
 	&& (std::numeric_limits<int>::min() <= this->getDoubleType()
 	&& this->getDoubleType() <= std::numeric_limits<int>::max())) {
@@ -138,6 +152,7 @@ void	Convert::printValues()
 	} else {
 		std::cout << "int: impossible" << std::endl;
 	}
+	/* [FLOAT] */
 	if (this->getType() != NAN_INF
 	&& (std::numeric_limits<float>::min() <= this->floatType_
 	&& this->getFloatType() <= std::numeric_limits<float>::max())) {
@@ -156,6 +171,7 @@ void	Convert::printValues()
 			std::cout << "float: -inff" << std::endl;
 		}
 	}
+	/* [DOUBLE] */
 	if (this->getType() != NAN_INF) {
 		std::cout << "double: " << this->getDoubleType();
 		if (this->getDoubleType() - this->getIntType() == 0) {

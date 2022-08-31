@@ -22,7 +22,10 @@
       <change beforePath="$PROJECT_DIR$/cpp06/ex00/Conversion.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cpp06/ex00/Conversion.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cpp06/ex00/Conversion.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/cpp06/ex00/Conversion.hpp" afterDir="false" />
     </list>
-    <list id="98256e08-511f-4292-bd71-002d25edf6d5" name="Changes by yukikondo::n" comment="" />
+    <list id="98256e08-511f-4292-bd71-002d25edf6d5" name="Changes by yukikondo::n" comment="">
+      <change beforePath="$PROJECT_DIR$/cpp06/ex00/Conversion.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cpp06/ex00/Conversion.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp06/ex00/Conversion.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/cpp06/ex00/Conversion.hpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +34,25 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/cpp06/ex00/Conversion.cpp">
+      <ranges>
+        <range start1="15" end1="15" start2="15" end2="26" changelist="98256e08-511f-4292-bd71-002d25edf6d5" />
+        <range start1="30" end1="31" start2="41" end2="42" changelist="caf301c4-b1da-427a-b567-70f1e703cf05" />
+        <range start1="122" end1="122" start2="133" end2="134" changelist="caf301c4-b1da-427a-b567-70f1e703cf05" />
+        <range start1="123" end1="125" start2="135" end2="137" changelist="caf301c4-b1da-427a-b567-70f1e703cf05" />
+        <range start1="133" end1="133" start2="145" end2="146" changelist="caf301c4-b1da-427a-b567-70f1e703cf05" />
+        <range start1="140" end1="140" start2="153" end2="154" changelist="caf301c4-b1da-427a-b567-70f1e703cf05" />
+        <range start1="158" end1="158" start2="172" end2="173" changelist="caf301c4-b1da-427a-b567-70f1e703cf05" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/cpp06/ex00/Conversion.hpp">
+      <ranges>
+        <range start1="21" end1="23" start2="21" end2="21" changelist="caf301c4-b1da-427a-b567-70f1e703cf05" />
+        <range start1="52" end1="52" start2="50" end2="51" changelist="98256e08-511f-4292-bd71-002d25edf6d5" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

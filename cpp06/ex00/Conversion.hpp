@@ -19,8 +19,6 @@ public:
 	void convertInput();
 	void printValues();
 	bool isMultipleSigns();
-//	bool checkOverflow();
-
 
 	/* fromType functions */
 	void fromChar();
@@ -50,6 +48,7 @@ public:
 	void setFloatType(float floatType);
 	double getDoubleType() const;
 	void setDoubleType(double doubleType);
+	bool isMultipleZero();
 
 
 	class ErrorException : public std::exception {
