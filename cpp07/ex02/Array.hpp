@@ -12,9 +12,8 @@ public:
 		return (this->array_[index]);
 	}
 
-
 	T const &operator[](unsigned int index) const {
-		if (this->arraySize_ < index + 1) {
+		if (this->arraySize_ <= index) {
 			throw std::exception();
 		}
 		return (this->array_[index]);
