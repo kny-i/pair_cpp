@@ -2,10 +2,25 @@
 #define CPP_ARRAY_HPP
 
 #include <iostream>
-#include "Array.tpp"
 
 class Array {
 public:
+	template <typename T>
+	T &operator[](unsigned int index) {
+		if (this->arraySize_ < index + 1) {
+			throw std::exception();
+		}
+		return (this->array_[index]);
+	}
+
+	template <typename T>
+	T const &operator[](unsigned int index) const {
+		if (this->arraySize_ < index + 1) {
+			throw std::exception();
+		}
+		return (this->array_[index]);
+	}
+
 	/* canonical form */
 	Array()
 	: arraySize_(0) , array_(new T[0]) {}
@@ -29,7 +44,7 @@ public:
 	}
 
 	virtual ~Array() {
-		delete [] array;
+		delete [] this->array_;
 	}
 private:
 	unsigned int arraySize_;
@@ -37,13 +52,12 @@ private:
 };
 
 template <typename T>
-T const &operator[](unsigned int index) const {
-
+void printArray(Array<T> const &array)
+{
+	for (size_t i = 0; i < static_cast<int>(array.size()); i++) {
+		std::cout << array[i] << " ";
+	}
+	std::cout << std::endl;
 }
-//↑const verと両方作るべき
-
-//template <typename T>
-//std::ostream &operator<<(std::ostream &os, const Array<T> &rhs);
-
 
 #endif //CPP_ARRAY_HPP
