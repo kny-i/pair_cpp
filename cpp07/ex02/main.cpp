@@ -1,18 +1,13 @@
 #include <iostream>
 #include "Array.hpp"
 
-int main()
-{
-	/* tips */
-	int *a = new int ();
-	std::cout << *a << std::endl;
-}
-
 /* from PDF */
-/*
-#define MAX_VAL 750
+
+#define MAX_VAL 3
 int main(int, char**)
 {
+	// --PDF--
+	std::cout << "--PDF--" << std::endl;
 	Array<int> numbers(MAX_VAL);
 	int* mirror = new int[MAX_VAL];
 	srand(time(NULL));
@@ -57,13 +52,9 @@ int main(int, char**)
 	{
 		numbers[i] = rand();
 	}
-	delete [] mirror;//
+	delete [] mirror;
+	std::cout << "-------" << std::endl;
 
- 	Array<int> test(0); // empty array
-	Array<int> test_100(100); // empty array
-
-	std::cout << test << std::endl;
-	std::cout << test_100 << std::endl;
-	return 0;
 }
-*/
+
+
