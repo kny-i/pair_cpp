@@ -19,11 +19,12 @@ public:
 	Span &operator=(const Span &rhs);
 
 	void addNumber(int num);
-	void addNumberRange(int num, unsigned int range);
+	void addRondNumberRange(unsigned int range);
 	unsigned int shortestSpan() const;
 	unsigned int longestSpan() const;
 
 	unsigned int getSize() const ;
+	void printValues() const;
 
 private:
 	std::vector<int> vectorStorage;
