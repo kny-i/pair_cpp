@@ -25,6 +25,11 @@ bool Convert::isMultipleZero()
 	}
 }
 
+/*
+ * ↑副作用が大きすぎた。0.0fのような0から始まる小数のケースも弾いてしまってる。
+ * 簡単な.shを書いてあらかじめ予想できるテストが正確に動くかどうかは確かめつつ書くべきだった。
+ */
+
 int Convert::parseInput()
 {
 	if (this->getValue() == "nan" ||
