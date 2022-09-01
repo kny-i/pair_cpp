@@ -8,6 +8,7 @@
 #include <vector>
 #include <iterator>
 #include <climits>
+#include <stdexcept>
 
 class Span{
 public:
