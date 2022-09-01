@@ -55,6 +55,12 @@ int main(int, char**)
 	delete [] mirror;
 	std::cout << "-------" << std::endl;
 
+	std::cout << "--OTHER TEST--" << std::endl;
+	Array<int> test(0); // empty array
+	Array<int> test_100(100); // empty array
+
+	printArray(test);
+	printArray(test_100);
 }
 
 

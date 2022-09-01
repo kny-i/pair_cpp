@@ -25,10 +25,14 @@ public:
 	}
 	/* canonical form */
 	Array()
-	: arraySize_(0) , array_(new T[0]) {}
+	: Array(0){}
 
 		Array(unsigned int value)
-	: arraySize_(value), array_(new T[value]) {}
+	: arraySize_(value), array_(new T[value]) {
+		for (unsigned int i = 0; i < arraySize_; i++){
+			this->array_[i] = this->defaultValue;
+		}
+	}
 
 	Array(const Array &rhs) {
 		*this = rhs;
@@ -50,17 +54,16 @@ public:
 	}
 private:
 	unsigned int arraySize_;
+	static const T defaultValue = 0;
 	T *array_;
 };
 
-/*
-
+template<typename T>
 void printArray(Array<T> const &array)
 {
-	for (size_t i = 0; i < static_cast<int>(array.size()); i++) {
+	for (size_t i = 0; i < static_cast<size_t>(array.size()); i++) {
 		std::cout << array[i] << " ";
 	}
 	std::cout << std::endl;
 }
-*/
 #endif //CPP_ARRAY_HPP
