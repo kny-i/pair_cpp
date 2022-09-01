@@ -2,8 +2,14 @@
 #define PAIR_CPP_ARRAY_TPP
 
 #include "Array.hpp"
-
-
+template <typename T>
+void printArray(Array<T> const &array)
+{
+	for (size_t i = 0; i < static_cast<int>(array.size()); i++) {
+		std::cout << array[i] << " ";
+	}
+	std::cout << std::endl;
+}
 
 //template <typename T>
 //std::ostream &operator<<(std::ostream &os, const Array<T> &rhs)

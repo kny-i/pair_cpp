@@ -7,10 +7,11 @@
 class Array {
 public:
 	/* canonical form */
-	Array() : arraySize_(0) {}
+	Array()
+	: arraySize_(0) , array_(new T[0]) {}
 
 	Array(unsigned int value)
-	: arraySize_(value), array_(new T()) {}
+	: arraySize_(value), array_(new T[N])) {}
 
 	Array(const Array &rhs) {
 		*this = rhs;
