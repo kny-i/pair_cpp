@@ -32,12 +32,10 @@ public:
 			*this = rhs;
 		return (*this);
 	}
-
 	iterator begin()
 	{
 		return (stack::c.begin());
 	}
-
 	iterator end()
 	{
 		return (stack::c.end());
