@@ -2,6 +2,7 @@
 #define CPP_ARRAY_HPP
 
 #include <iostream>
+
 template<typename T>
 class Array {
 public:
@@ -27,7 +28,7 @@ public:
 	Array()
 	: Array(0) {}
 
-		Array(unsigned int value)
+	Array(unsigned int value)
 	: arraySize_(value), array_(new T[value]) {
 		for (unsigned int i = 0; i < arraySize_; i++){
 			this->array_[i] = this->kValue_;

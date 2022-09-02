@@ -56,8 +56,16 @@ int main(int, char**)
 
 	std::cout << "_____OTHER TEST______" << std::endl;
 	Array<int> test(0); // empty array
-	Array<int> test_100(100); // empty array
+	Array<int> test_100(100); // specific size of array
 
 	printArray(test);
 	printArray(test_100);
+
+//	Array<std::string> stringArray;
+//	stringArray[0] = "Hello";
+//	stringArray[1] = "42";
+//	stringArray[2] = "tokyo";
+//	for (size_t i = 0; stringArray[i]; i++) {
+//		std::cout << stringArray[i] << std::endl;
+//	}
 }

@@ -11,11 +11,10 @@ typename T::iterator easyfind(T &in, int i)
 {
 	typename T::iterator	it;
 	it = find(in.begin(), in.end(), i);
-	if (it == in.end())
-	{
-		throw (std::exception());
+	if (it == in.end()) {
+		throw std::exception();
 	}
-	return (it);
+	return it;
 }
 
 #endif //CPP_EASYFIND_HPP

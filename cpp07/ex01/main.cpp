@@ -18,7 +18,6 @@ std::ostream & operator<<(std::ostream &o, Awesome &a) {
 template <typename T>
 void scale_print( T const & x ) { std::cout << x << std::endl; return; }
 
-
 int main()
 {
 	{
@@ -46,6 +45,7 @@ int main()
 				 '!', '\0'};
 		::iter(array, sizeof(array) / sizeof(array[0]), print);
 	}
+
 	{
 		std::cout << std::endl << "[STRING CASE]" << std::endl;
 		std::string array[] = {"NOP", "SATAHARU", "BUNJIRO"};
@@ -56,8 +56,8 @@ int main()
 		std::cout << "[SCALE TESTCASE]" << std::endl;
 		int tab[] = { 0, 1, 2, 3, 4 };
 		Awesome tab2[5];
-		iter( tab2, 5, scale_print );
+		::iter( tab2, 5, scale_print );
 
-		iter( tab, 5, scale_print );
+		::iter( tab, 5, scale_print );
 	}
 }

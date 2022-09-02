@@ -1,7 +1,7 @@
 NAME = whatever
 srcs = $(wildcard ./*.cpp)
 objs = $(srcs:.cpp=.o)
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address -pedantic
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98  -pedantic #-fsanitize=address
 CXX = c++
 
 all: $(NAME)
@@ -25,5 +25,7 @@ out: all
 err: all
 	./$(NAME) 1>/dev/null
 
-.PHONY: all clean fclean re out err run
+leaks: re
+	leaks -q --atExit -- ./$(NAME)
 
+.PHONY: all clean fclean re out err run leaks
