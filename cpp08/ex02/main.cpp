@@ -2,6 +2,7 @@
 
 int	main()
 {
+	std::cout << "---Test---" << std::endl;
 	std::cout << "---testSubject---" << std::endl;
 	MutantStack<int> mstack;
 	mstack.push(5);
