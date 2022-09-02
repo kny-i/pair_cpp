@@ -25,12 +25,12 @@ public:
 	}
 	/* canonical form */
 	Array()
-	: Array(0){}
+	: Array(0) {}
 
 		Array(unsigned int value)
 	: arraySize_(value), array_(new T[value]) {
 		for (unsigned int i = 0; i < arraySize_; i++){
-			this->array_[i] = this->defaultValue;
+			this->array_[i] = this->kValue_;
 		}
 	}
 
@@ -40,8 +40,7 @@ public:
 	}
 
 	Array &operator=(const Array &rhs) {
-		if (this->array_ != NULL)
-		{
+		if (this->array_ != NULL) {
 			delete [] this->array_;
 		}
 		if (this != &rhs) {
@@ -59,7 +58,7 @@ public:
 	}
 private:
 	unsigned int arraySize_;
-	static const T defaultValue = 0;
+	static const T kValue_ = 0;
 	T *array_;
 };
 
