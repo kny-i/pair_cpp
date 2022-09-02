@@ -19,7 +19,7 @@ public:
 	Span &operator=(const Span &rhs);
 
 	void addNumber(int num);
-	void addRondNumberRange(unsigned int range);
+	void addRandNumberRange(unsigned int range);
 	unsigned int shortestSpan() const;
 	unsigned int longestSpan() const;
 
