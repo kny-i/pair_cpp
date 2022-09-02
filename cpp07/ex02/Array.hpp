@@ -34,7 +34,8 @@ public:
 		}
 	}
 
-	Array(const Array &rhs) {
+	Array(const Array &rhs)
+	{
 		this->array_ = NULL;
 		*this = rhs;
 	}
@@ -53,7 +54,8 @@ public:
 		return *this;
 	}
 
-	virtual ~Array() {
+	virtual ~Array()
+	{
 		delete [] this->array_;
 	}
 private:
