@@ -9,8 +9,6 @@ int	main()
 	ilist.push_back(2);
 	ilist.push_back(3);
 
-	//要素を修正できるイテレータ（iterator）、参照のみが可能なイテレータ（const_iterator）がある
-	//begin(), end() で（非const）イテレータを取得、cbegin(), cend() で const イテレータを取得出来る
 	std::list<int>::const_iterator it;
 
 	try {
