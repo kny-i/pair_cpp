@@ -25,5 +25,8 @@ out: all
 err: all
 	./$(NAME) 1>/dev/null
 
+leaks: re
+	leaks -q --atExit -- ./$(NAME)
+
 .PHONY: all clean fclean re out err run
 

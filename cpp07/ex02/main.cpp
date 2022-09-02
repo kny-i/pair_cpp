@@ -3,11 +3,6 @@
 
 /* from PDF */
 
-//__attribute__((destructor))
-//static void destructor() {
-//	system("leaks -q array");
-//}
-
 #define MAX_VAL 100
 int main(int, char**)
 {
