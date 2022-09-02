@@ -35,10 +35,15 @@ public:
 	}
 
 	Array(const Array &rhs) {
+		this->array_ = NULL;
 		*this = rhs;
 	}
 
 	Array &operator=(const Array &rhs) {
+		if (this->array_ != NULL)
+		{
+			delete [] this->array_;
+		}
 		if (this != &rhs) {
 			this->arraySize_ = rhs.arraySize_;
 			this->array_ = new T[this->arraySize_];
