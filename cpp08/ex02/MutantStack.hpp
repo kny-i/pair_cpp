@@ -10,7 +10,7 @@ template <class T>
 class MutantStack : public std::stack<T>
 {
 public:
-	typedef std::stack<T> stack;
+	typedef typename std::stack<T> stack;
 	typedef typename stack::container_type container;
 	typedef typename container::iterator iterator;
 
@@ -24,7 +24,7 @@ public:
 	}
 	~MutantStack()
 	{
-		std::cout << "Deconstuctor called" << std::endl;
+		std::cout << "Destructor called" << std::endl;
 	}
 	stack &operator=(const stack &rhs)
 	{
