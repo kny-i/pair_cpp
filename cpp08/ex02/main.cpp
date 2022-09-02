@@ -6,13 +6,16 @@ int	main()
 	MutantStack<int> mstack;
 	mstack.push(5);
 	mstack.push(17);
+	std::cout << "____top____" << std::endl;
 	std::cout << mstack.top() << std::endl;
 	mstack.pop();
+	std::cout << "____size___" << std::endl;
 	std::cout << mstack.size() << std::endl;
+	std::cout << "__________" << std::endl;
+
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
-	//[...] 
 	mstack.push(0);
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
@@ -35,7 +38,6 @@ int	main()
 	sstack.push("foo");
 	sstack.push("fuga");
 	sstack.push("nop");
-	//[...]
 	sstack.push("AKO");
 	MutantStack<std::string>::iterator a = sstack.begin();
 	MutantStack<std::string>::iterator b = sstack.end();

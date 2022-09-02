@@ -16,21 +16,21 @@ public:
 
 	MutantStack() : stack()
 	{
-		std::cout << "Default Constructor called" << std::endl;
+		std::cerr << "Default Constructor called" << std::endl;
 	}
 	MutantStack(const stack &rhs) : stack(rhs)
 	{
-		std::cout << "Copy Constructor called" << std::endl;
+		std::cerr << "Copy Constructor called" << std::endl;
 	}
 	~MutantStack()
 	{
-		std::cout << "Destructor called" << std::endl;
+		std::cerr << "Destructor called" << std::endl;
 	}
 	stack &operator=(const stack &rhs)
 	{
-		if (*this != rhs)
+		if (this != &rhs)
 			*this = rhs;
-		return (*this);
+		return *this;
 	}
 	iterator begin()
 	{
