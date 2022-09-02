@@ -57,8 +57,8 @@ unsigned int Span::longestSpan() const {
 	if (this->vectorStorage.size() < 2) {
 		throw std::range_error("doesn't have enough numbers ");
 	}else {
-			std::vector<int>::const_iterator min = std::min_element(this->vectorStorage.begin(), this->vectorStorage.end());
-			std::vector<int>::const_iterator max = std::max_element(this->vectorStorage.begin(), this->vectorStorage.end());
+			std::vector<int>::const_iterator min = std::min_element(this->vectorStorage.cbegin(), this->vectorStorage.cend());
+			std::vector<int>::const_iterator max = std::max_element(this->vectorStorage.cbegin(), this->vectorStorage.cend());
 			return *max - *min;
 	}
 }
@@ -86,7 +86,7 @@ unsigned int Span::shortestSpan() const {
 }
 
 void Span::printValues() const {
-	std::vector<int>::const_iterator tmp = this->vectorStorage.begin();
+	std::vector<int>::const_iterator tmp = this->vectorStorage.cbegin();
 	std::cout << "---Values---" << std::endl;
 	std::cout << "{";
 
