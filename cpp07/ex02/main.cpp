@@ -3,7 +3,12 @@
 
 /* from PDF */
 
-#define MAX_VAL 3
+//__attribute__((destructor))
+//static void destructor() {
+//	system("leaks -q array");
+//}
+
+#define MAX_VAL 100
 int main(int, char**)
 {
 	// --PDF--
@@ -53,14 +58,11 @@ int main(int, char**)
 		numbers[i] = rand();
 	}
 	delete [] mirror;
-	std::cout << "-------" << std::endl;
 
-	std::cout << "--OTHER TEST--" << std::endl;
+	std::cout << "_____OTHER TEST______" << std::endl;
 	Array<int> test(0); // empty array
 	Array<int> test_100(100); // empty array
 
 	printArray(test);
 	printArray(test_100);
 }
-
-

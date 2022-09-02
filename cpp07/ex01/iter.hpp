@@ -9,7 +9,8 @@ void scale_print(T& arg)
 }
 
 template <typename T>
-void iter(T *array, size_t len, void (*f)(T &)) {
+void iter(T *array, size_t len, void (*f)(T &))
+{
 	if (array == NULL || f == NULL) {
 		return ;
 	}
@@ -17,8 +18,10 @@ void iter(T *array, size_t len, void (*f)(T &)) {
 		f(array[i]);
 	}
 }
+
 template <typename T>
-void iter(const T *array, size_t len, void (*f)(T &)) {
+void iter(const T *array, size_t len, void (*f)(T &))
+{
 	if (array == NULL || f == NULL) {
 		return ;
 	}
