@@ -8,6 +8,7 @@
 #include <vector>
 #include <iterator>
 #include <climits>
+#include <list>
 #include <stdexcept>
 
 class Span{
@@ -19,6 +20,12 @@ public:
 	Span &operator=(const Span &rhs);
 
 	void addNumber(int num);
+	template<class templateIterator>
+	void	addNumbers(templateIterator first, templateIterator last)
+	{
+		for (templateIterator it = first; it != last; it++)
+			this->addNumber(*it);
+	}
 	void addRandNumberRange(unsigned int range);
 	unsigned int shortestSpan() const;
 	unsigned int longestSpan() const;

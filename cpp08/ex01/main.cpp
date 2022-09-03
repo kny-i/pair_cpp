@@ -33,5 +33,15 @@ int	main()
 	sp.addNumber(11);
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
+
+	Span testRange = Span(100);
+
+	std::list<int> ilist;
+	ilist.push_back(1);
+	ilist.push_back(2);
+	ilist.push_back(3);
+	testRange.addNumbers(ilist.begin(), ilist.end());
+	std::cout << "shortest testRange is " << testRange.shortestSpan() << std::endl;
+	std::cout << "longest testRange is " << testRange.longestSpan() << std::endl << std::endl;
 }
 
